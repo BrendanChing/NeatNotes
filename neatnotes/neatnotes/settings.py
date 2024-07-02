@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-w_e&&2f8bioa)5bt@qbwb=(^k+)!#09w5ce+7mtya&)(mpw+ly
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-brendanching-neatnotes-qymjykyihve.ws.codeinstitute-ide.net',]
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # my apps
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +67,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-brendanching-neatnotes-qymjykyihve.ws.codeinstitute-ide.net',
+    'https://*.herokuapp.com',
 ]
 
 WSGI_APPLICATION = 'neatnotes.wsgi.application'
