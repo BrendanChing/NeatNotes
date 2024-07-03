@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neat Notes</title>
-</head>
-<body>
-    <h1>Hello!</h1>
-    <p>from class based view</p>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
     
-</body>
-</html>
+<div class="row">
+    <div class="col">
+        <div class="home-holder text-center">
+            <h1 class="fs-3">Hello</h1>
+            <p>Welcome to the worlds most amzing app</p>
+            <a href="{% url 'notes.list' %}" class="btn btn-success btn-sm">Go to Smart Notes</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}    
