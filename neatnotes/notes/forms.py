@@ -6,8 +6,9 @@ class NotesForm(forms.ModelForm):
         model = Notes
         fields = ('title', 'text')
 
+# change below to have different condition for notes
 def clean_title(self):
     title  = self.cleaned_data['title']
     if 'Django' not in title:
-        raise forms.validationError('We only accept notes about Django')
-    return title            
+        raise forms.ValidationError('We only accept notes about Django')
+    return title

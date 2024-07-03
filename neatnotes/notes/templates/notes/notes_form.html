@@ -10,6 +10,12 @@
             {{form}}
             <button type="submit" class="btn btn-sm btn-success">Submit</button>
         </form>
+
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            {{forms.errors}}
+        </div>
+        {% endif %}
     </div>
 </div>
 
