@@ -10,7 +10,6 @@ class NotesUpdateView(UpdateView):
     success_url = '/smart/notes/'
     form_class = NotesForm
 
-
 class NotesCreateView(CreateView):
     model = Notes
     success_url = '/smart/notes/'
