@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
-import dj_database_url #problem here
+import dj_database_url
 
 if os.path.isfile("env.py"):
     import env
