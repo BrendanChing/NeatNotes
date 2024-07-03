@@ -4,18 +4,23 @@
 {% block content %}
 
 <div class="row justify-content-center">
-    <div class="col-md-8">
-        <form action="{% url 'notes.new' %}" method="post">
-            {% csrf_token %}
-            {{form}}
-            <button type="submit" class="btn btn-sm btn-success">Submit</button>
-        </form>
-
-        {% if form.errors %}
-        <div class="alert alert-danger">
-            {{forms.errors}}
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-header">Create Note</div>
+            
+            <form action="{% url 'notes.new' %}" method="post">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit" class="btn btn-sm btn-success">Submit</button>
+            </form>
+    
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                {{forms.errors}}
+            </div>
+            {% endif %}
+        
         </div>
-        {% endif %}
     </div>
 </div>
 
