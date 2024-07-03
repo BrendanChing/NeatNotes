@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-w_e&&2f8bioa)5bt@qbwb=(^k+)!#09w5ce+7mtya&)(mpw+ly
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-brendanching-neatnotes-qymjykyihve.ws.codeinstitute-ide.net',]
+ALLOWED_HOSTS = ['8000-brendanching-neatnotes-gx38w0qaqrd.ws.codeinstitute-ide.net',]
 
 
 # Application definition
@@ -71,7 +71,7 @@ TEMPLATES = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-brendanching-neatnotes-qymjykyihve.ws.codeinstitute-ide.net',
+    'https://8000-brendanching-neatnotes-gx38w0qaqrd.ws.codeinstitute-ide.net',
     'https://*.herokuapp.com',
 ]
 
