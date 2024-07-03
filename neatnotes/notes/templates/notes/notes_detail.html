@@ -11,8 +11,8 @@
                 <p>{{note.text}}</p>
             </div>
             <div class="card-footer">
-                <a href="" class="btn btn-sm btn-primary">Back</a>
-                <a href="" class="btn btn-sm btn-warning">Edit</a>
+                <a href="{% url 'notes.list' %}" class="btn btn-sm btn-primary">Back</a>
+                <a href="{% url 'notes.update' pk=note.id %}" class="btn btn-sm btn-warning">Edit</a>
             </div>
         </div>
     </div>
