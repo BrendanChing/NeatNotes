@@ -28,10 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-brendanching-neatnotes-gx38w0qaqrd.ws.codeinstitute-ide.net',
+    '8000-brendanching-neatnotes-5nzxul9w87k.ws.codeinstitute-ide.net',
      '.herokuapp.com',
 
 ]
@@ -85,7 +85,7 @@ TEMPLATES = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-brendanching-neatnotes-gx38w0qaqrd.ws.codeinstitute-ide.net',
+    'https://8000-brendanching-neatnotes-5nzxul9w87k.ws.codeinstitute-ide.net',
     'https://*.herokuapp.com',
 ]
 
