@@ -34,7 +34,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '8000-brendanching-neatnotes-5nzxul9w87k.ws.codeinstitute-ide.net',
     '.herokuapp.com',
-    'https://neatnotes-273c093a6f6f.herokuapp.com/',
+    'neatnotes-273c093a6f6f.herokuapp.com/',
 
 ]
 
