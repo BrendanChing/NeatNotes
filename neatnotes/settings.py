@@ -33,7 +33,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-brendanching-neatnotes-5nzxul9w87k.ws.codeinstitute-ide.net',
-     '.herokuapp.com',
+    '.herokuapp.com',
+    'https://neatnotes-273c093a6f6f.herokuapp.com/',
 
 ]
 
@@ -89,6 +90,7 @@ TEMPLATES = [
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-brendanching-neatnotes-5nzxul9w87k.ws.codeinstitute-ide.net',
     'https://*.herokuapp.com',
+    'https://neatnotes-273c093a6f6f.herokuapp.com/',
 ]
 
 WSGI_APPLICATION = 'neatnotes.wsgi.application'
