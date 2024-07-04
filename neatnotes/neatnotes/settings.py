@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     # my apps
     'home',
     'notes',
+    
+    # extensions
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
