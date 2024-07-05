@@ -29,10 +29,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-brendanching-neatnotes-5nzxul9w87k.ws.codeinstitute-ide.net',
+    '8000-brendanching-neatnotes-u9xbreg6pxo.ws.codeinstitute-ide.net',
     '.herokuapp.com',
     'neatnotes-273c093a6f6f.herokuapp.com',
 
@@ -88,7 +88,7 @@ TEMPLATES = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-brendanching-neatnotes-5nzxul9w87k.ws.codeinstitute-ide.net',
+    'https://8000-brendanching-neatnotes-u9xbreg6pxo.ws.codeinstitute-ide.net',
     'https://*.herokuapp.com',
     'https://neatnotes-273c093a6f6f.herokuapp.com/',
 ]
