@@ -6,26 +6,48 @@
 <div class="row">
     <div class="col">
         <div class="notes_list_heading text-center mb-5">
-            <h1 class="fs-4">These are the notes</h1>
+            <h1 class="fs-4">Your Notes</h1>
         </div>
     </div>
 </div>
 
-<div class="row">
+    {% if not notes|filter:is_important:true %}
     {% for note in notes %}
-    <div class="col-md-4">
+    <div class="row">
+    <div class="col-12 w-25">
+    <div class="note-title border">{{ note.title }}</div>
+    </div>
+    </div>
+    {% else %}
+    <div class="row">
+    <div class="col-md-6">
+    {% for note in notes|filter:is_important:true %}
+    <div class="note-title border m-5">{{ note.title }}</div>
+    {% endfor %}
+    <div class="col-md-6">
+    {% for note in notes|filter:is_important:false %}
+    <div class="note-title border m-5">{{ note.title }}</div>
+    </div>
+    </div>
+
+    
+
+    </div>
+
+    
+    <!-- <div class="col-md-4">
         <div class="card">
             <div class="card-header">{{ note.title }}</div>
             <div class="card-body">
                 <p>{{ note.content|truncatechars:40 }}</p>
             </div>
             <div class="card-footer">
-                <a href="{% url 'notes.detail' pk=note.id %}" class="btn btn-info btn-sm">View Note</a>
+                <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-info btn-sm">View Note</a>
             </div>
         </div>
-    </div>
+    </div> -->
     {% endfor %}
-</div>
+
 
 
 

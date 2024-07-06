@@ -58,4 +58,4 @@ def toggle_important(request, pk):
     note = get_object_or_404(Notes, pk=pk)
     note.is_important = not note.is_important
     note.save()
-    return redirect('note_detail', pk=pk)
+    return redirect('notes_detail', pk=pk)
