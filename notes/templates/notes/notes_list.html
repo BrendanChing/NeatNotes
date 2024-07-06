@@ -11,32 +11,45 @@
     </div>
 </div>
 
-    {% if not notes|filter:is_important:true %}
-    {% for note in notes %}
+{% if has_important_notes %}
+    <!-- Display important notes on the left and all notes on the right -->
     <div class="row">
-    <div class="col-12 w-25 justify-content-center>
-    <div class="note-title border">{{ note.title }}</div>
+        <div class="col-md-6">
+            <h2 class="fs-5">Important Notes</h2>
+            {% for note in notes %}
+                {% if note.is_important %}
+                    <div class="mb-3">
+                        <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-info btn-sm">{{ note.title }}</a>
+                        <!-- Additional content for important notes if needed -->
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-md-6">
+            <h2 class="fs-5">All Notes</h2>
+            {% for note in notes %}
+                <div class="mb-3">
+                    <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-info btn-sm">{{ note.title }}</a>
+                    <!-- Additional content for all notes if needed -->
+                </div>
+            {% endfor %}
+        </div>
     </div>
+{% else %}
+    <!-- Display all notes vertically centered -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="fs-5">All Notes</h2>
+            {% for note in notes %}
+                <div class="mb-3">
+                    <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-info btn-sm">{{ note.title }}</a>
+                    <!-- Additional content for all notes if needed -->
+                </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
-    {% else %}
-    <div class="row">
-    <div class="col-md-6 justify-content-center">
-    {% for note in notes|filter:is_important:true %}
-    <div class="note-title border m-5">{{ note.title }}</div>
-    {% endfor %}
-    <div class="col-md-6 justify-content-center">
-    {% for note in notes|filter:is_important:false %}
-    <div class="note-title border m-5">{{ note.title }}</div>
-    {% endfor %}
-    </div>
-    </div>
-
-    
-
-    </div>
-
-    
+{% endif %}
+{% endblock %} 
     <!-- <div class="col-md-4">
         <div class="card">
             <div class="card-header">{{ note.title }}</div>
@@ -48,10 +61,7 @@
             </div>
         </div>
     </div> -->
-    {% endfor %}
 
 
-
-
-{% endblock %}    
+    
         
