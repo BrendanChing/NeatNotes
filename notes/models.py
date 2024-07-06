@@ -7,3 +7,20 @@ class Notes(models.Model):
     text = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notes')
+    is_important = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
+
+
+# class AllNotes(generic.ListView):
+#     """
+#     Notes order view
+#     """
+#     model = Post
+#     queryset = Post.objects.order_by('-published_on')
+#     template_name = 'notes_list.html'
+#     paginate_by = 6    
+
+
+    
