@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Notes
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from . forms import NotesForm
@@ -58,4 +58,4 @@ def toggle_important(request, pk):
     note = get_object_or_404(Notes, pk=pk)
     note.is_important = not note.is_important
     note.save()
-    return JsonResponse({'is_important': note.is_important})
+    return redirect('note_detail', pk=pk)

@@ -21,43 +21,13 @@
             </div>
             <div class="card-footer">
                 <a href="{% url 'notes.detail' pk=note.id %}" class="btn btn-info btn-sm">View Note</a>
-                <button class="btn btn-warning btn-sm toggle-important" data-id="{{ note.pk }}">
-                    {% if note.is_important %}
-                        Mark as not important
-                    {% else %}
-                        Mark as important
-                    {% endif %}
-                </button>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('.toggle-important').click(function(){
-            var button = $(this);
-            var noteId = button.data('id');
-            $.ajax({
-                url: '/note/' + noteId + '/toggle-important/',
-                method: 'POST',
-                data: {
-                    csrfmiddlewaretoken: '{{ csrf_token }}'
-                },
-                success: function(response) {
-                    var importantStatus = response.is_important;
-                    if (importantStatus) {
-                        button.text('Mark as not important');
-                    } else {
-                        button.text('Mark as important');
-                    }
-                }
-            });
-        });
-    });
-</script>
+
 
 {% endblock %}    
-    
+        
