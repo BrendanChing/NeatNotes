@@ -11,27 +11,26 @@
                 <p>{{note.text}}</p>
             </div>
             <div class="card-footer">
-                <a href="{% url 'notes.list' %}" class="btn btn-sm btn-primary">Back</a>
-                <a href="{% url 'notes.update' pk=note.id %}" class="btn btn-sm btn-warning">Edit</a>
-                <a href="{% url 'notes.delete' pk=note.id %}" class="btn btn-sm btn-danger">Delete</a>
-                <p>Important: {{ note.is_important }}</p>
-    
+                <a href="{% url 'notes.list' %}" class="btn btn-sm btn-dark">Back</a>
+                <a href="{% url 'notes.update' pk=note.id %}" class="btn btn-sm btn-dark">Edit</a>
+                <a href="{% url 'notes.delete' pk=note.id %}" class="btn btn-sm btn-dark">Delete</a>
+                <br>
                 <form action="{% url 'toggle_important' note.pk %}" method="post">
                     {% csrf_token %}
-                    <button type="submit">
+                    <span>
+                        {% if note.is_important %}
+                            This note is important.
+                        {% else %}
+                            
+                        {% endif %}
+                    </span>
+                    <button type="submit m-4">
                         {% if note.is_important %}
                             Mark as not important
                         {% else %}
                             Mark as important
                         {% endif %}
                     </button>
-                    <span>
-                        {% if note.is_important %}
-                            This note is important
-                        {% else %}
-                            
-                        {% endif %}
-                    </span>
                 </form>
             </div>
         </div>

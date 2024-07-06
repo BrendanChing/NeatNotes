@@ -14,22 +14,22 @@
 {% if has_important_notes %}
     <!-- Display important notes on the left and all notes on the right -->
     <div class="row">
-        <div class="col-md-6 justify-content-center">
-            <h2 class="fs-3">Important Notes</h2>
+        <div class="col-md-6">
+            <h2 class="fs-3 text-center">Important Notes</h2>
             {% for note in notes %}
                 {% if note.is_important %}
-                    <div class="mb-3">
-                        <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-info btn-sm fs-5">{{ note.title }}</a>
+                    <div class="mb-3 d-flex justify-content-center">
+                        <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-dark btn-sm fs-5">{{ note.title }}</a>
                         <!-- Additional content for important notes if needed -->
                     </div>
                 {% endif %}
             {% endfor %}
         </div>
-        <div class="col-md-6 justify-content-center">
-            <h2 class="fs-3">All Notes</h2>
+        <div class="col-md-6">
+            <h2 class="fs-3 text-center">All Notes</h2>
             {% for note in notes %}
-                <div class="mb-3">
-                    <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-info btn-sm fs-5">{{ note.title }}</a>
+                <div class="mb-3 d-flex justify-content-center">
+                    <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-dark btn-sm fs-5">{{ note.title }}</a>
                     <!-- Additional content for all notes if needed -->
                 </div>
             {% endfor %}
@@ -37,12 +37,12 @@
     </div>
 {% else %}
     <!-- Display all notes vertically centered -->
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-md-6">
-            <h2 class="fs-3">All Notes</h2>
+            <h2 class="fs-3 text-center">All Notes</h2>
             {% for note in notes %}
-                <div class="mb-3">
-                    <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-info btn-sm fs-5">{{ note.title }}</a>
+                <div class="mb-3 d-flex justify-content-center">
+                    <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-dark btn-sm fs-5">{{ note.title }}</a>
                     <!-- Additional content for all notes if needed -->
                 </div>
             {% endfor %}
