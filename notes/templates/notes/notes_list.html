@@ -14,19 +14,21 @@
     {% if not notes|filter:is_important:true %}
     {% for note in notes %}
     <div class="row">
-    <div class="col-12 w-25">
+    <div class="col-12 w-25 justify-content-center>
     <div class="note-title border">{{ note.title }}</div>
     </div>
     </div>
+    {% endfor %}
     {% else %}
     <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 justify-content-center">
     {% for note in notes|filter:is_important:true %}
     <div class="note-title border m-5">{{ note.title }}</div>
     {% endfor %}
-    <div class="col-md-6">
+    <div class="col-md-6 justify-content-center">
     {% for note in notes|filter:is_important:false %}
     <div class="note-title border m-5">{{ note.title }}</div>
+    {% endfor %}
     </div>
     </div>
 

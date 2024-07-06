@@ -42,9 +42,17 @@ class NotesListView(LoginRequiredMixin, ListView):
     model = Notes
     context_object_name = "notes"
     login_url = "/login"
+    template_name = "notes/notes_list.html"
 
     def get_queryset(self):
         return self.request.user.notes.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Calculate if there are any important notes
+        has_important_notes = any(note.is_important for note in context['notes'])
+        context['has_important_notes'] = has_important_notes
+        return context
 
 class NotesDetailView(LoginRequiredMixin, DetailView):
     model = Notes
