@@ -13,14 +13,7 @@ class Notes(models.Model):
         return self.title
 
 
-# class AllNotes(generic.ListView):
-#     """
-#     Notes order view
-#     """
-#     model = Post
-#     queryset = Post.objects.order_by('-published_on')
-#     template_name = 'notes_list.html'
-#     paginate_by = 6    
+
 
 
     
