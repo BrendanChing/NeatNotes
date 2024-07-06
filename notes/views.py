@@ -55,8 +55,7 @@ class NotesDetailView(LoginRequiredMixin, DetailView):
         return self.request.user.notes.all()
 
 def toggle_important(request, pk):
-    note = get_object_or_404(Note, pk=pk)
+    note = get_object_or_404(Notes, pk=pk)
     note.is_important = not note.is_important
     note.save()
-    return redirect('note_detail', pk=pk)
-
+    return JsonResponse({'is_important': note.is_important})
