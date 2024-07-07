@@ -11,18 +11,18 @@
             <form action="" method="post">
                 {% csrf_token %}
                 {{form}}
-                <button type="submit" class="btn btn-sm btn-success">Submit</button>
+                <button type="submit" class="btn btn-sm btn-dark">Submit</button>
             </form>
     
             {% if form.errors %}
-            <div class="alert alert-danger">
+            <div class="alert alert-dark">
                 {{forms.errors}}
             </div>
             {% endif %}
         </div>
 
             <div class="card-footer">
-                <a href="{% url 'notes.list' %}" class="btn btn-sm btn-primary">Back</a>
+                <a href="{% url 'notes.list' %}" class="btn btn-sm btn-dark">Back</a>
             </div>
     
     </div>

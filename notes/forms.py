@@ -12,10 +12,14 @@ class NotesForm(forms.ModelForm):
         labels = {
             'text': 'Write your note here'
         }
+    def clean(self):
+        cleaned_data = super().clean()
+        title = cleaned_data.get('title')
+        text = cleaned_data.get('text')
 
-# change below to have different condition for notes - this isn't working fix later
-# def clean_title(self):
-#     title  = self.cleaned_data['title']
-#     if 'Django' not in title:
-#         raise forms.ValidationError('We only accept notes about Django')
-#     return title
+        if not title:
+            # Extract the first three words from the text
+            first_three_words = ' '.join(text.split()[:3])
+            cleaned_data['title'] = first_three_words
+
+        return cleaned_data
