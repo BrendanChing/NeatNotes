@@ -38,8 +38,7 @@
 {% else %}
     <!-- Display all notes vertically centered -->
     <div class="row">
-        <div class="col-md-6">
-            <h2 class="fs-3 text-center">All Notes</h2>
+        <div class="col-md-12">
             {% for note in notes %}
                 <div class="mb-3 d-flex justify-content-center">
                     <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-dark btn-sm fs-5">{{ note.title }}</a>

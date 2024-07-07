@@ -1,0 +1,6 @@
+.logo {
+    background-image: url("../images/NeatNotesLogo.jpg");
+    position: absolute;
+    object-fit: contain;
+    
+}
