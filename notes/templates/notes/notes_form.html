@@ -6,24 +6,18 @@
 <div class="row justify-content-center">
     <div class="col-md-7">
         <div class="card">
-            <div class="card-header">Create Note</div>
+            <div class="card-header"><strong>Create Note</strong></div>
             
             <form action="" method="post">
                 {% csrf_token %}
-                {{form}}
+                {{ form.as_p }}
                 <button type="submit" class="btn btn-sm btn-dark">Submit</button>
             </form>
-    
-            {% if form.errors %}
-            <div class="alert alert-dark">
-                {{forms.errors}}
-            </div>
-            {% endif %}
         </div>
 
-            <div class="card-footer">
-                <a href="{% url 'notes.list' %}" class="btn btn-sm btn-dark">Back</a>
-            </div>
+        <div class="card-footer">
+            <a href="{% url 'notes.list' %}" class="btn btn-sm btn-dark">Back</a>
+        </div>
     
     </div>
 </div>
