@@ -20,7 +20,6 @@
                 {% if note.is_important %}
                     <div class="mb-3 d-flex justify-content-center">
                         <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-dark btn-sm fs-5">{{ note.title }}</a>
-                        <!-- Additional content for important notes if needed -->
                     </div>
                 {% endif %}
             {% endfor %}
@@ -30,7 +29,6 @@
             {% for note in notes %}
                 <div class="mb-3 d-flex justify-content-center">
                     <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-dark btn-sm fs-5">{{ note.title }}</a>
-                    <!-- Additional content for all notes if needed -->
                 </div>
             {% endfor %}
         </div>
@@ -48,18 +46,7 @@
         </div>
     </div>
 {% endif %}
-{% endblock %} 
-    <!-- <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">{{ note.title }}</div>
-            <div class="card-body">
-                <p>{{ note.content|truncatechars:40 }}</p>
-            </div>
-            <div class="card-footer">
-                <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-info btn-sm">View Note</a>
-            </div>
-        </div>
-    </div> -->
+{% endblock %}
 
 
     

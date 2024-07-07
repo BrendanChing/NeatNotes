@@ -8,7 +8,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 # Create your views here.
 class NotesDeleteView(LoginRequiredMixin, DeleteView):
     model = Notes
-    success_url = '/smart/notes/'
+    success_url = '/neat/notes/'
     template_name = 'notes/notes_delete.html'
     login_url = "/login"
 
@@ -17,7 +17,7 @@ class NotesDeleteView(LoginRequiredMixin, DeleteView):
 
 class NotesUpdateView(LoginRequiredMixin, UpdateView):
     model = Notes
-    success_url = '/smart/notes/'
+    success_url = '/neat/notes/'
     form_class = NotesForm
     login_url = "/login"
 
@@ -26,7 +26,7 @@ class NotesUpdateView(LoginRequiredMixin, UpdateView):
 
 class NotesCreateView(LoginRequiredMixin, CreateView):
     model = Notes
-    success_url = '/smart/notes/'
+    success_url = '/neat/notes/'
     form_class = NotesForm
     login_url = "/login"
 
