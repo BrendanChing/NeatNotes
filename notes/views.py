@@ -43,9 +43,10 @@ class NotesListView(LoginRequiredMixin, ListView):
     context_object_name = "notes"
     login_url = "/login"
     template_name = "notes/notes_list.html"
+    ordering = ['-created']
 
     def get_queryset(self):
-        return self.request.user.notes.all()
+        return self.request.user.notes.all().order_by(*self.ordering)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -53,6 +54,7 @@ class NotesListView(LoginRequiredMixin, ListView):
         has_important_notes = any(note.is_important for note in context['notes'])
         context['has_important_notes'] = has_important_notes
         return context
+
 
 class NotesDetailView(LoginRequiredMixin, DetailView):
     model = Notes
