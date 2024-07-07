@@ -1,131 +1,265 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# NeatNotes ReadME
 
-Welcome Brendan Ching,
+## Introduction
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Welcome to NeatNotes, a clean and simple app where user experience is paramount.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+![Screenshot of site](static/images/readmeintro.png)
 
-## Gitpod Reminders
+**Deployed link here when done**
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Agile Approach
+An Agile approach was taken in the planning and production of the app. This entailed identifying themes which helped to create user stories that attempt to capture the needs and desires of the user in relation to the app. Once identified, the user stories were added to a Kanban board: a place to organise and keep track of tasks. Due to the tight deadline, it was important to remain true to the Agile methodology, and complete the basic needs before moving onto less important functionality and style.
 
-`python3 -m http.server`
+![Kanban board](static/images/kanban.png)
 
-A blue button should appear to click: _Make Public_,
+## User Stories
+**As a user I want to create a note to help keep my life organised.**
 
-Another blue button should appear to click: _Open Browser_.
+Acceptance Criteria:
+- button to create a note
+- interface for user input of title and text
+- button to save note
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+**As a user I want to be able to view my saved notes, so that I can come back to them in the future.**
 
-A blue button should appear to click: _Make Public_,
+Acceptance Criteria:
+- menu of saved notes.
+- note loads when click on title in menu
 
-Another blue button should appear to click: _Open Browser_.
+**As a user I want to be able to update my notes, so that I can make changes to them.**
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Acceptance Criteria:
+- When user clicks on a note there will be an edit button, making the text and title editable
+- Save button will update the note
 
-To log into the Heroku toolbelt CLI:
+**As a user I want to be able to delete a note so that I can get rid of old notes I don't need anymore.**
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Acceptance Criteria:
+- Button to delete note
+- Alert to confirm deletion or go back
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+**As a user I want to be able to login so that I can view, create, update and delete my personal notes.**
 
-### Connecting your Mongo database
+Acceptance Criteria:
+- Front end form to input login details
+- Login details checked backend
+- Messages to tell user if the email/password is incorrect
+- Submit button
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+**As a user I want to be able to register so that I can create an account and login in the future.**
 
-------
+Acceptance Criteria:
+- Front end form for user details
+- Account created upon form submission
+- User can login next time
 
-## Release History
+**As a user I want a site that is clearly laid out so that I can see my notes clearly.**
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+Acceptance Criteria:
+- Clean, simple frontend layout for easy reading
+- Buttons purpose are either labelled or otherwise obvious
 
-**June 18, 2024,** Add Mongo back into template
+**As a user I want to be able to navigate the site easily so that I have a better user experience.**
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+Acceptance Criteria:
+- Clear buttons to bring up a list of saved notes
+- Clicking on a note title will bring it up
+- Clear logout button
 
-**May 28 2024:** Fix Mongo and Links installs
+**As a user I want to be able to label a note as important, so that I can see my more important notes in one place.**
 
-**April 26 2024:** Update node version to 16
+Acceptance Criteria:
+- Star button next to each note to mark as important
+- Important notes added to new set in the backend
+- Button to undo important label and send back to normal notes
 
-**September 20 2023:** Update Python version to 3.9.17.
+**As a site owner, I want a nice logo and distinctive colours to advertise my brand.**
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+Acceptance Criteria:
+- Well designed logo
+- Harmonious colour palette chosen
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+**As a user I want to be able to share my notes, so that others can view them.**
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Acceptance Criteria:
+- Share button next to save button
+- Functionality implemented to email note to others
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Workflow
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+I created a site map and workflow diagram: **CHANGE THIS ONCE DONE**
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Screenshot 2023-12-07 at 14 12 33](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/c5ed706d-1b01-4a22-8e40-6e4ff5511e61)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Models
+I used the Django AllAuth User Model and created a custom model. This included the following fields:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+|      Name            |     Type                   |     Key  |
+|----------------------|----------------------------|----------|
+|      user            |     User Model             |     FK   |
+|      title           |     CharField              |          | 
+|      text            |     CharField  dropdown    |          |
+|      Created         |     CharField  dropdown    |          |
+|      is_important    |     Boolean                |          |
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Design
+### Wireframes and Features
+The site is be fully responsive and accessible on mobile, tablet and desktop devices.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![Screenshot 2023-12-07 at 13 50 23](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/112af580-6678-4e52-b3f3-76db12c4f240)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+**All Users:**
+- Are able to view admin added recipes
+- Are able to use the search functionality
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+**Logged In Users:**
+- Can add recipes
+- Can view, edit and delete their own recipes
+- Can add recipes to their favourites
+  
+They will have a personalised home page with all their recipes on it and will be able to view recipes they have favourited, both from their own and the site recipe collections.  Each recipe card will be a clickable link to the full recipe.  The same page layout will be used for the recipe collection, the users homepage and the favourite recipes page to maintain consistency and simplicity throughout.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Screenshot 2023-12-07 at 13 33 50](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/f688c986-8040-48cb-938a-64b20b189f72)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
 
-## FAQ about the uptime script
+**The Full Recipe Page:**
+Will contain all the relevent information for each recipe.  Design will ensure all ingredients and instructions are available on one screen for desktop and tablet.
 
-**Why have you added this script?**
+![Screenshot 2023-12-07 at 13 36 14](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/3e8edc07-582b-41de-8cd6-6ce59475f3be)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+**Add / Edit Recipe Page:**
+Front End CRUD will be available to add / edit recipes for logged in users.  The form will include category dropdowns and the ability to upload an image.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![Screenshot 2023-12-07 at 13 42 11](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/42943578-41c6-4061-b0e4-e9debaa239bd)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
+## Design Choices
+###  Colours
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+I used [coolors.co] (https://coolors.co/palette/253439-ff5757-545454-ffbd59-f5f4f3) to generate my colour palette:
 
-**Can I opt out?**
+![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/027c781a-346b-4ed8-93ed-9a42815c0f0f)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+I aimed for a clean and simple website design that keeps the focus on the content. Opting for a vibrant colour scheme, I wanted to strike a balance between minimalism and boldness. The light off-white background (#f5f4f3) keeps things simple and clean, while introducing splashes of colour add a touch of visual interest that contrasts against the neutral backdrop. This combination creates a modern look without being too over the top.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+Coral and yellow form a complementary pairing, and their warmth complemented by cool grey tones, ensures a visually cohesive and balanced palette.  The neutral colours help maintain an overall sense of harmony.
 
-**Anything more?**
+The result is a carefully chosen color palette that enhances the design without overwhelming it, adding sophistication and vibrancy.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Branding
 
----
+![image](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ea618f02-99f6-4947-a764-8ffe40bb4155)
 
-Happy coding!
+### Typography
+
+I created a logo on Canva using Josefin Sans, and used this for the headers and titles in my website for continuity of design.  While Josefin Sans has a geometric feel I paired this with Lato for a modern, clean appearance.  This pairing ensures readability, making text clear and easy to read. The fonts are versatile, suitable for various contexts like web and print designs. Despite their unique characteristics, they maintain consistency in proportions and weights, contributing to a cohesive and professional look. The combination strikes a balance, creating an aesthetically pleasing design that blends the vintage charm of Josefin Sans with the clean modernity of Lato.
+
+
+
+## RecipMe
+
+### Homepage
+
+![Screenshot 2023-12-08 at 12 03 20](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/7abfbfb0-59bd-4442-b208-c1ee634a79dd)
+
+
+### Sign In
+
+![Screenshot 2023-12-08 at 12 09 17](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ffcb1ee2-5192-4d04-8a76-0dd7d61798ea)
+
+
+### Add / Edit Pages
+
+![Screenshot 2023-12-08 at 12 20 19](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/62545a43-e46b-41b8-95e3-9edece069e07)
+
+
+### RecipMe, Favourites
+
+![Screenshot 2023-12-08 at 12 30 57](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/af2e5cb7-a489-4239-96bb-fbb5e76963b4)
+
+
+![Screenshot 2023-12-08 at 12 35 16](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/6fdb2dd1-56c0-4c7f-9388-f22b00e5368b)
+
+
+###  Personalised Home Page 
+
+![Screenshot 2023-12-08 at 12 40 17](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/2049f4cc-a85e-4ed7-9010-0197f17aac23)
+
+
+### Full Recipe Page
+
+![Screenshot 2023-12-08 at 12 46 15](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/9e79d26c-09d0-43ac-96e4-cc291166ec50)
+
+
+
+
+### Future Features
+Future features not implemented at this time include:
+- The ability on the full recipe page to toggle on/off dark mode and prevent your screen turning off, a feature I feel would be very useful when following a recipe
+- Recipe sharing - To be able to share recipes with other users of the site or to email them to others
+- Upload recipes to main site - The ability to request admin approval for a recipe to be added to the site wide collection
+- Notes - the ability for a user to leave notes on their recipes outlining any tweaks they may have made
+
+
+## Testing
+
+Results of manual testing:
+[Testing](testing.md)
+
+## Responsiveness
+This website has been tested and is fully responsive on Desktop, Mac book, Ipad and mobile devices.
+
+                                      
+
+## Browser Compatibility
+
+The website has been tested and is being displayed as expected on Safari, Google Chrome and Firefox as well as on android and apple devices.
+
+| Screenshots                                                                                                                                      | Ipad and Iphone SE                                                                                                   |
+|--------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| ![53d76d73-ebe8-46ee-9860-8137adc34f04](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/18cdc571-d3ce-4f13-972f-9b7e98cd6936) | ![ipad](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/6124121e-03e9-4085-9200-746d3aa4812c)     |
+| ![IMG_0144](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/62afc582-cedd-4e03-802c-9afeeb5f1c8d)                             | ![IMG_0143](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/ae16c7b3-08dc-4077-8fe7-b314cd527072) |
+
+## Bugs
+- On the edit recipe page there is no success message appearing.  It does reload the page if successful and return to the top of page
+- The only feature not currently working is the 'forgot your password' link, email authentication was out of scope for this project.
+
+
+## Technologies Used
+- CSS
+- Django
+- HTML
+- Bootstrap
+- Python
+- ElephantSQL Postgres Database
+- Cloudinary - All user submitted recipe photos are uploaded to cloudinary
+
+- GitPod development environment used
+- GitHub used for version control and code hosting
+- GitHub Projects used for Agile Methodology
+
+## Deployment
+- I followed the following screenshot to deploy my project to Heroku:
+
+![image (2)](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/26d212cb-0a51-4bb3-8485-d2fb189eebdc)
+
+
+# Credits
+
+- The Structure of my website was based around this tutorial with Dee Mc:
+https://youtu.be/JzDBCZTgVyw?si=w3BBwJswUjBTm1xw 
+- This tutorial was used to assist in the creation of my favourite button:
+https://www.youtube.com/watch?v=H4QPHLmsZMU
+- ChatGPT was used for troubleshooting, bug fixing and content generating.  Also used to create my persona.
+- Thanks to Stacey Robson for the Heroku deployment guide
+- Thanks to the other members of the Bootcamp for their technical and moral support
+- Recipes used were from the bbc good food website
+- Hero on image home page retrieved ella-olsson-KPDbRyFOTnE-unsplash.jpg https://images.unsplash.com
+- Fontawesome was used for icons
+- Google fonts was used
+- Wireframes created in Balsamiq
+- Logo and flow chart created in Canva
