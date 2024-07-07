@@ -11,7 +11,7 @@
 <body>
 
     <nav class="navbar navbar-dark bg-dark">
-        <img src="{% static 'images/NeatNotesLogo.jpg' %}" alt="Image of Logo" height="40" width="40">
+        <a href="{% url 'notes.list' %}"><img src="{% static 'images/NeatNotesLogo.jpg' %}" alt="Image of Logo" height="40" width="40"></a>
 
         <div class="ms-auto">
             {% if user.is_authenticated %}
@@ -36,5 +36,6 @@
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/afced6604b.js" crossorigin="anonymous"></script>
 </body>
 </html>
