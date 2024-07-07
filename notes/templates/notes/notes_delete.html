@@ -8,9 +8,10 @@
         <div class="confirm-message text-center">
             <form action="" method="post">
                 {% csrf_token %}
-                <p>Are you sure you want to delete <q>{{note.title}}</q>?</p>
+                <p>Are you sure you want to delete <q>{{ note.title }}</q>?</p>
                 <p>This action cannot be undone.</p>
-                <input type="submit" class="btn btn-sm btn-danger" value="Confirm">
+                <input type="submit" class="btn btn-sm btn-dark" value="Confirm">
+                <a href="{% url 'notes.list' %}" class="btn btn-sm btn-dark">Back</a>
             </form>
         </div>
     </div>
