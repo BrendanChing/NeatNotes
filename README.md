@@ -6,7 +6,7 @@ Welcome to NeatNotes, a clean and simple app where user experience is paramount.
 
 ![Screenshot of site](static/images/readmeintro.png)
 
-**Deployed link here when done**
+[Deployed Site](https://neatnotes-273c093a6f6f.herokuapp.com/neat/notes/)
 
 ## Agile Approach
 An Agile approach was taken in the planning and production of the app. This entailed identifying themes which helped to create user stories that attempt to capture the needs and desires of the user in relation to the app. Once identified, the user stories were added to a Kanban board: a place to organise and keep track of tasks. Due to the tight deadline, it was important to remain true to the Agile methodology, and complete the basic needs before moving onto less important functionality and style.

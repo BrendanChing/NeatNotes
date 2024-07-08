@@ -32,7 +32,7 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-brendanching-neatnotes-u9xbreg6pxo.ws.codeinstitute-ide.net',
+    '8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net',
     '.herokuapp.com',
     'neatnotes-273c093a6f6f.herokuapp.com',
 
@@ -88,7 +88,7 @@ TEMPLATES = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-brendanching-neatnotes-u9xbreg6pxo.ws.codeinstitute-ide.net',
+    'https://8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net',
     'https://*.herokuapp.com',
     'https://neatnotes-273c093a6f6f.herokuapp.com/',
 ]

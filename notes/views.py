@@ -4,29 +4,45 @@ from django.views.generic import CreateView, ListView, DetailView, UpdateView, D
 from .forms import NotesForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse_lazy
 
 # Create your views here.
 class NotesDeleteView(LoginRequiredMixin, DeleteView):
     model = Notes
-    success_url = '/neat/notes/'
+    success_url = reverse_lazy('notes.list')  # Use reverse_lazy for better URL handling
     template_name = 'notes/notes_delete.html'
     login_url = "/login"
 
     def get_queryset(self):
         return self.request.user.notes.all()
 
+    def delete(self, request, *args, **kwargs):
+        # Get the object to be deleted
+        self.object = self.get_object()
+        # Call the superclass's delete method
+        response = super().delete(request, *args, **kwargs)
+        # Add the success message
+        messages.success(request, 'Note deleted successfully!')
+        # Redirect to the success URL
+        return response    
+
 class NotesUpdateView(LoginRequiredMixin, UpdateView):
     model = Notes
-    success_url = '/neat/notes/'
+    success_url = reverse_lazy('notes.list')
     form_class = NotesForm
     login_url = "/login"
 
     def get_queryset(self):
         return self.request.user.notes.all()
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, 'Note updated successfully!')
+        return response 
+
 class NotesCreateView(LoginRequiredMixin, CreateView):
     model = Notes
-    success_url = '/neat/notes/'
+    success_url = reverse_lazy('notes.list')  # Use reverse_lazy for better URL handling
     form_class = NotesForm
     login_url = "/login"
 
@@ -34,6 +50,7 @@ class NotesCreateView(LoginRequiredMixin, CreateView):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
+        messages.success(self.request, 'Note created successfully!')
         return HttpResponseRedirect(self.get_success_url())
 
 
@@ -53,7 +70,7 @@ class NotesListView(LoginRequiredMixin, ListView):
         # Calculate if there are any important notes
         has_important_notes = any(note.is_important for note in context['notes'])
         context['has_important_notes'] = has_important_notes
-        return context
+        return context    
 
 
 class NotesDetailView(LoginRequiredMixin, DetailView):
