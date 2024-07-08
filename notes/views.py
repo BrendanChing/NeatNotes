@@ -5,53 +5,42 @@ from .forms import NotesForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
-from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 # Create your views here.
-class NotesDeleteView(LoginRequiredMixin, DeleteView):
+class NotesDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Notes
-    success_url = reverse_lazy('notes.list')  # Use reverse_lazy for better URL handling
+    success_url = reverse_lazy('notes.list')
     template_name = 'notes/notes_delete.html'
     login_url = "/login"
+    success_message = "Successfully deleted note."
 
     def get_queryset(self):
         return self.request.user.notes.all()
 
-    def delete(self, request, *args, **kwargs):
-        # Get the object to be deleted
-        self.object = self.get_object()
-        # Call the superclass's delete method
-        response = super().delete(request, *args, **kwargs)
-        # Add the success message
-        messages.success(request, 'Note deleted successfully!')
-        # Redirect to the success URL
-        return response    
 
-class NotesUpdateView(LoginRequiredMixin, UpdateView):
+class NotesUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Notes
     success_url = reverse_lazy('notes.list')
     form_class = NotesForm
     login_url = "/login"
+    success_message = "Successfully updated note."
 
     def get_queryset(self):
         return self.request.user.notes.all()
 
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        messages.success(self.request, 'Note updated successfully!')
-        return response 
 
-class NotesCreateView(LoginRequiredMixin, CreateView):
+class NotesCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Notes
-    success_url = reverse_lazy('notes.list')  # Use reverse_lazy for better URL handling
+    success_url = reverse_lazy('notes.list')
     form_class = NotesForm
     login_url = "/login"
+    success_message = "Successfully created note."
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
-        messages.success(self.request, 'Note created successfully!')
         return HttpResponseRedirect(self.get_success_url())
 
 
