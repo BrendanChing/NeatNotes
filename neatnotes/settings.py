@@ -38,9 +38,6 @@ ALLOWED_HOSTS = [
 
 ]
 
-
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,7 +48,6 @@ INSTALLED_APPS = [
     # my apps
     'home',
     'notes',
-    
     # extensions
     'django_extensions',
 ]
@@ -67,7 +63,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'neatnotes.urls'
+ROOT_URLCONF = 'neatnotes.urls' # points to urls in neatnotes, that then points to urls.py in home and notes
 
 TEMPLATES = [
     {
@@ -88,15 +84,15 @@ TEMPLATES = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net',
+    'https://8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net', # dev environment
     'https://*.herokuapp.com',
-    'https://neatnotes-273c093a6f6f.herokuapp.com/',
+    'https://neatnotes-273c093a6f6f.herokuapp.com/', # deployed site
 ]
 
-WSGI_APPLICATION = 'neatnotes.wsgi.application'
+WSGI_APPLICATION = 'neatnotes.wsgi.application' # allows communication from python to the browser
 
 DATABASES = {
-'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) # fetches the value of DATABASE_URL from the env.py file
 }
 
 
@@ -134,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # Specifies the directory to collect static files during deployment. 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',

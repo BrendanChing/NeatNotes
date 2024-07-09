@@ -8,9 +8,10 @@
         <div class="card">
             <div class="card-header">Sign-up Now</div>
             <div class="card-body">
+                <!-- Form for user sign-up -->
                 <form action="" method="post">
                     {% csrf_token %}
-                    {{form.as_p}}
+                    {{ form.as_p }}  <!-- Render form fields as paragraphs -->
                     <input type="submit" class="btn btn-sm btn-success" value="sign up" name="Submit">
                 </form>
             </div>

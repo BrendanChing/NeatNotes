@@ -2,28 +2,38 @@ from django import forms
 from .models import Notes
 
 class NotesForm(forms.ModelForm):
+    """
+    Form for creating a note
+    """
     class Meta:
         model = Notes
         fields = ('title', 'text')
+        # Widgets for adding django's form control which controls valid input, display and error messages
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control my-3'}),
             'text': forms.Textarea(attrs={'class': 'form-control my-3'}),
         }
         labels = {
+            # Placeholder text for text feild
             'text': 'Write your note here'
         }
 
     # Override init to set title field to not required
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        """ 
+        Calls the parent class (forms.Modelform) with super() then passes arguments from NotesForm into it.
+        Then overrides the title required attribute, setting it to false.
+        """
+        super().__init__(*args, **kwargs) 
         self.fields['title'].required = False    
 
     def clean(self):
+        # Ensures data passed to if statement is valid
         cleaned_data = super().clean()
         title = cleaned_data.get('title')
         text = cleaned_data.get('text')
 
-        # Ensure text is not None or empty
+        # Ensures text is not None or empty
         if text:
             # Extract the first three words from the text
             first_three_words = ' '.join(text.split()[:3])
