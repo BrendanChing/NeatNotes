@@ -10,14 +10,16 @@
             <div class="card-body">
                 <form action="" method="post">
                     {% csrf_token %}
-                    {{form.as_p}}
+                    <!-- Render the form fields -->
+                    {{ form.as_p }}
+                    <!-- Submit button -->
                     <input type="submit" class="btn btn-sm btn-dark" value="Login">
+                    <!-- Link to sign-up page for the users without accounts -->
                     <span>Don't have an account? </span><a href="{% url 'signup' %}">Sign-up</a>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
 
 {% endblock %}

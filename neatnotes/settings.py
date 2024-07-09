@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net',
@@ -45,10 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # my apps
+    # My apps
     'home',
     'notes',
-    # extensions
+    # Extensions
     'django_extensions',
 ]
 
@@ -63,7 +63,8 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'neatnotes.urls' # points to urls in neatnotes, that then points to urls.py in home and notes
+# Points to urls in neatnotes, that then points to urls.py in home and notes
+ROOT_URLCONF = 'neatnotes.urls'
 
 TEMPLATES = [
     {
@@ -84,15 +85,15 @@ TEMPLATES = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net', # dev environment
+    'https://8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net', # Dev environment
     'https://*.herokuapp.com',
-    'https://neatnotes-273c093a6f6f.herokuapp.com/', # deployed site
+    'https://neatnotes-273c093a6f6f.herokuapp.com/', # Deployed site
 ]
 
-WSGI_APPLICATION = 'neatnotes.wsgi.application' # allows communication from python to the browser
+WSGI_APPLICATION = 'neatnotes.wsgi.application' # Allows communication from python to the browser
 
 DATABASES = {
-'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) # fetches the value of DATABASE_URL from the env.py file
+'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) # Fetches the value of DATABASE_URL from the env.py file
 }
 
 

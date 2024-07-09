@@ -11,7 +11,8 @@
                 <!-- Form for user sign-up -->
                 <form action="" method="post">
                     {% csrf_token %}
-                    {{ form.as_p }}  <!-- Render form fields as paragraphs -->
+                    <!-- Render form fields as paragraphs -->
+                    {{ form.as_p }}
                     <input type="submit" class="btn btn-sm btn-success" value="sign up" name="Submit">
                 </form>
             </div>

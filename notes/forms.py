@@ -22,13 +22,14 @@ class NotesForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         """ 
         Calls the parent class (forms.Modelform) with super() then passes arguments from NotesForm into it.
-        Then overrides the title required attribute, setting it to false.
+        Then overrides the title required attribute, setting it to false. This is to allow no title input from
+        the user and instead fill the title with the first 3 words of the content.
         """
         super().__init__(*args, **kwargs) 
         self.fields['title'].required = False    
 
     def clean(self):
-        # Ensures data passed to if statement is valid
+        # Ensures data passed if the input is valid
         cleaned_data = super().clean()
         title = cleaned_data.get('title')
         text = cleaned_data.get('text')

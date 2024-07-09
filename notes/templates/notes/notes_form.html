@@ -10,6 +10,7 @@
             <!-- Form for creating a new note -->
             <form action="" method="post">
                 {% csrf_token %}
+                <!-- Render form fields -->
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-sm btn-dark">Save</button>
             </form>

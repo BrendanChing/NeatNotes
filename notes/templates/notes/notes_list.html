@@ -19,7 +19,7 @@
             <!-- Iterates through the users notes -->
             {% for note in notes %}
                 {% if note.is_important %}
-                    <!-- If the note is marked important, it is put on the left -->
+                    <!-- If the note is marked important, it is displayed on the left -->
                     <div class="mb-3 d-flex justify-content-center">
                         <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-dark btn-sm fs-5">{{ note.title }}</a>
                     </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-6">
             <h2 class="fs-3 text-center">All Notes</h2>
-            <!-- If note is not important it is put on the right -->
+            <!-- If note is not important it is displayed on the right -->
             {% for note in notes %}
                 {% if not note.is_important %}
                     <div class="mb-3 d-flex justify-content-center">
@@ -39,7 +39,7 @@
         </div>
     </div>
 {% else %}
-    <!-- Display all notes vertically centered if there are no important notes -->
+    <!-- Display all notes vertically and centered if there are no important notes -->
     <div class="row">
         <div class="col-md-12">
             {% for note in notes %}

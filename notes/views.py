@@ -66,7 +66,7 @@ class NotesCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class NotesListView(LoginRequiredMixin, ListView):
     """
-    View to display a list of notes for the logged-in user.
+    View to display a list of notes for logged-in users.
     Orders the notes by creation date and passes a flag indicating if any notes are marked as important.
     """
     model = Notes
@@ -83,7 +83,7 @@ class NotesListView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         """
-        Add a flag to the context indicating if there are any important notes.
+        Adds a context variable to indicate if any of the user's notes are marked as important.
         """
         context = super().get_context_data(**kwargs)
         # Calculate if there are any important notes
@@ -95,7 +95,7 @@ class NotesListView(LoginRequiredMixin, ListView):
 class NotesDetailView(LoginRequiredMixin, DetailView):
     """
     View to display the details of a specific note.
-    Ensures the user is logged in and retrieves the note belonging to the user.
+    Ensures the user is logged in and retrieves the users note.
     """
     model = Notes
     context_object_name = "note"
