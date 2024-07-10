@@ -39,7 +39,7 @@ Acceptance Criteria:
 - Button to delete note
 - Alert to confirm deletion or go back
 
-**As a user I want to be able to login so that I can view, create, update and delete my personal notes.**
+**As a user I want to be able to login so that I can privately view, create, update and delete my personal notes.**
 
 Acceptance Criteria:
 - Front end form to input login details
@@ -86,11 +86,24 @@ Acceptance Criteria:
 - Share button next to save button
 - Functionality implemented to email note to others
 
+## Wireframes
+
+I created wireframes on Balsamiq in order to visualise the layout of the site. While the finished product differs from the wireframes quite significantly, they still served me well as a 
+rough guide.
+
+[Link to wireframes document](docs/wireframes.bmpr)
+
+
+
 ## Workflow
 
 I created a site map and workflow diagram: **CHANGE THIS ONCE DONE**
 
 ![Screenshot 2023-12-07 at 14 12 33](https://github.com/rachbry/recipme-django-cookbook/assets/73660517/c5ed706d-1b01-4a22-8e40-6e4ff5511e61)
+
+## Features
+
+
 
 ### Models
 I used the Django AllAuth User Model and created a custom model. This included the following fields:
