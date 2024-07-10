@@ -119,7 +119,7 @@ I used dbdiagrams to define my database tables. It was useful as an overview of 
 
 ![Screenshot of database diagram](static/images/databasediagram.png)
 
-#### Apps/Views
+#### Planning my Django Apps and Views
 
 ##### App: Home
 
@@ -146,5 +146,9 @@ I used dbdiagrams to define my database tables. It was useful as an overview of 
 - toggle_important: handles note important status.
 
 ### Features
+
+#### Register
+
+
 
 
