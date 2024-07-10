@@ -6,7 +6,7 @@ Welcome to NeatNotes, a clean and simple app where user experience is paramount.
 
 ![Screenshot of site](static/images/readmeintro.png)
 
-[Deployed Site](https://neatnotes-273c093a6f6f.herokuapp.com/neat/notes/)
+**[Deployed Site](https://neatnotes-273c093a6f6f.herokuapp.com/neat/notes/)**
 
 ## Agile Approach
 An Agile approach was taken in the planning and production of the app. This entailed identifying themes which helped to create user stories that attempt to capture the needs and desires of the user in relation to the app. Once identified, the user stories were added to a Kanban board: a place to organise and keep track of tasks. Due to the tight deadline, it was important to remain true to the Agile methodology, and complete the basic needs before moving onto less important functionality and style.
@@ -166,6 +166,8 @@ New users are able to register with a username and password, allowing them to lo
 ![screenshot of registration](static/images/signup.png)
 
 **Related User Story: As a user I want to be able to register so that I can create an account and login in the future.**
+<br>
+
 **Testing: pass.**
 
 
@@ -180,6 +182,8 @@ Users are notified when they login:
 ![screenshot of notification](static/images/loginmessage.png)
 
 **Related User Story: As a user I want to be able to login so that I can privately view, create, update and delete my personal notes.**
+<br>
+
 **Testing: pass.**
 
 ### Logout 
@@ -193,6 +197,8 @@ Users are given confirmation of logging out and a thank you message. There is no
 ![screenshot of logout message](static/images/logoutmessage.png)
 
 **Related User Story: As a user, I want to be able to logout, so I know my notes are secure when I am not using the app.**
+<br>
+
 **Testing: pass.**
 
 
@@ -203,6 +209,8 @@ Navigation is made simple by the navbar. Users can navigate between, home, logou
 ![screenshot of navbar](static/images/navbar.png)
 
 **Related User Story: As a user I want to be able to navigate the site easily, so that I have a better user experience.**
+<br>
+
 **Testing: pass.**
 
 
@@ -221,6 +229,8 @@ Users are notified upon successful creation of notes.
 ![screenshot of create notification](static/images/createmessage.png)
 
 **Related User Story: As a user, I want to create a note to help keep my life organised.**
+<br>
+
 **Testing: pass.**
 
 ### Delete Note
@@ -234,6 +244,8 @@ Users can delete notes they no longer need or want.
  ![screenshot of delete confirmation](static/images/deleteconfirm.png)
 
 **Related User Story: As a user I want to be able to delete a note so that I can get rid of old notes I don't need anymore.**
+<br>
+
 **Testing: pass.**
 
 ### Edit
@@ -248,6 +260,8 @@ They are notified upon successful update of their note.
 ![screenshot of edit message](static/images/editmessage.png)
 
 **Related User Story: As a user I want to be able to update my notes, so that I can make changes to them.**
+<br>
+
 **Testing: pass.**
 
 ### View
@@ -256,11 +270,13 @@ Users can view their notes in one place...
 
 ![screenshot of notes view](static/images/viewall.png)
 
- ... or click the the title to view the contents.
+ ... or click the title to view the contents.
 
 ![screenshot of notes detailed view](static/images/viewcontent.png) 
 
 **Related User Story: As a user I want to be able to view my saved notes, so that I can come back to them in the future.**
+<br>
+
 **Testing: pass.**
 
 ### Mark as Important
@@ -271,11 +287,13 @@ Users can mark a note as important; this will be saved in the backend. There is 
 
 ![screenshot of important button](static/images/importantnot.png)
 
-Once a note is marked as important, the layout of the homepage is changed; important notes of kept on the left, and all notes are kept on the right. Note that important notes will appear in both columns.
+Once a note is marked as important, the layout of the homepage is changed; important notes are kept on the left, and all notes are kept on the right. Note that important notes will appear in both columns.
 
 ![screenshot of important layout](static/images/importantlayout.png)
 
 **Related User Story: As a user I want to be able to label a note as important, so that I can see my more important notes in one place.**
+<br>
+
 **Testing: pass.**
 
 ### No Title Field Required
@@ -287,7 +305,52 @@ Sometimes users don't want to think of a title for their note - maybe they just 
 ![screenshot of title autofilled](static/images/notitleview.png)
 
 **Related User Story: As a user I want to be able to make a quick note without having to worry about the title, so that I can make a note faster.**
+<br>
+
 **Testing: pass.**
+
+## Testing
+
+### Responsiveness
+
+The site is fully responsive on all screen sizes. However, the only instance where alternative formatting is required is on the homepage for mobile phones, and only when the user has some notes in the 'important' catagory. All other pages have responsive django forms and nothing else.
+
+#### Phone
+
+![screenshot of homepage on phone](static/images/responsivephone.png)
+
+#### Tablet
+
+![screenshot of homepage on tablet](static/images/responsivetablet.png)
+
+#### Desktop
+
+![screenshot of homepage on desktop](static/images/responsivemax.png)
+
+### Browser Compatability
+
+|                         | Chrome   | Edge     | Firefox  | Safari   | Opera |
+|-------------------------|----------|----------|----------|----------|-------|
+| Intended Appearance?    | Yes      | Yes      | Yes      | No       | Yes   |
+| Intended Responsiveness?| Yes      | Yes      | Yes      | Yes      | Yes   |
+
+**Notes:**
+Firefox, Safari and Opera highlights fields in blue rather than black when clicked on. However, I did not implement this feature, hence the 'Yes' in the table for Firefox and Opera.
+
+![screenshot of firefox blue fields](static/images/firefox.png)
+
+Safari renders the navbar in a dark navy blue, rather than black.
+
+![picture of app on safari](static/images/safari.jpg)
+
+
+
+
+
+
+
+
+
 
 
 
