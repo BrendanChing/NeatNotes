@@ -47,6 +47,13 @@ Acceptance Criteria:
 - Messages to tell user if the email/password is incorrect
 - Submit button
 
+**As a user, I want to be able to logout, so I know my notes are secure when I am not using the app.**
+
+Acceptance Criteria:
+- Button for logging out
+- Confirmation message when logged out
+- No access to site until logged in again
+
 **As a user I want to be able to register so that I can create an account and login in the future.**
 
 Acceptance Criteria:
@@ -60,7 +67,7 @@ Acceptance Criteria:
 - Clean, simple frontend layout for easy reading
 - Buttons purpose are either labelled or otherwise obvious
 
-**As a user I want to be able to navigate the site easily so that I have a better user experience.**
+**As a user I want to be able to navigate the site easily, so that I have a better user experience.**
 
 Acceptance Criteria:
 - Clear buttons to bring up a list of saved notes
@@ -115,7 +122,7 @@ I created a custom model with the following fields:
 
 ### Capstone Project Planning
 
-I used dbdiagrams to define my database tables. It was useful as an overview of the database, and served me well as a reference will working on the backend logic.
+I used dbdiagrams to define my database tables. It was useful as an overview of the database, and served me well as a reference while working on the backend logic.
 
 ![Screenshot of database diagram](static/images/databasediagram.png)
 
@@ -148,6 +155,72 @@ I used dbdiagrams to define my database tables. It was useful as an overview of 
 ### Features
 
 #### Register
+
+New users are able to register with a username and password, allowing them to login and create notes privately.
+
+![screenshot of registration](static/images/signup.png)
+
+**Related User Story: As a user I want to be able to register so that I can create an account and login in the future.**
+**Testing: pass.**
+
+
+#### Login
+
+Registered users can login using the form, allowing them access to the site.
+
+![screenshot of login form](static/images/login.png)
+
+Users are notified when they login:
+
+![screenshot of notification](static/images/loginmessage.png)
+
+**Related User Story: As a user I want to be able to login so that I can privately view, create, update and delete my personal notes.**
+**Testing: pass.**
+
+#### Logout 
+
+Logged-in users can securely logout.
+
+![screenshot of logout in navbar](static/images/logoutnavbar.png)
+
+Users are given confirmation of logging out and a thank you message. There is no django notification as it is already in the template.
+
+![screenshot of logout message](static/images/logoutmessage.png)
+
+**Related User Story: As a user, I want to be able to logout, so I know my notes are secure when I am not using the app.**
+**Testing: pass.**
+
+
+#### Create Note
+
+Users can create and save notes. They can either use the navbar...
+
+![screenshot of creating note from navbar](static/images/createnavbar.png)
+
+... or the plus sign to do this.
+
+![screenshot of creating note with plus](static/images/create.png)
+
+**Related User Story: As a user, I want to create a note to help keep my life organised.**
+**Testing: pass.**
+
+#### Delete Note
+
+Users can delete notes they no longer need or want.
+
+![screenshot of delete button](static/images/delete.png)
+
+ There is a confirmation message to ensure no accidental deletions.
+
+ ![screenshot of delete confirmation](static/images/deleteconfirm.png)
+
+**Related User Story: As a user I want to be able to delete a note so that I can get rid of old notes I don't need anymore.**
+**Testing: pass.**
+
+
+
+
+
 
 
 
