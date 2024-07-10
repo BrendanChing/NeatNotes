@@ -87,6 +87,11 @@ Acceptance Criteria:
 - Well designed logo
 - Harmonious colour palette chosen
 
+**As a user I want to be able to make a quick note without having to worry about the title, so that I can make a note faster.**
+
+Acceptance Criteria:
+- Title field autofilled with the first three words of the note if no title is specified upon created of the note.
+
 **As a user I want to be able to share my notes, so that others can view them.**
 
 Acceptance Criteria:
@@ -191,6 +196,16 @@ Users are given confirmation of logging out and a thank you message. There is no
 **Testing: pass.**
 
 
+### Navbar
+
+Navigation is made simple by the navbar. Users can navigate between, home, logout and new note. The logo also links to the homepage.
+
+![screenshot of navbar](static/images/navbar.png)
+
+**Related User Story: As a user I want to be able to navigate the site easily, so that I have a better user experience.**
+**Testing: pass.**
+
+
 ### Create Note
 
 Users can create and save notes. They can either use the navbar...
@@ -200,6 +215,10 @@ Users can create and save notes. They can either use the navbar...
 ... or the plus sign to do this.
 
 ![screenshot of creating note with plus](static/images/create.png)
+
+Users are notified upon successful creation of notes.
+
+![screenshot of create notification](static/images/createmessage.png)
 
 **Related User Story: As a user, I want to create a note to help keep my life organised.**
 **Testing: pass.**
@@ -227,6 +246,53 @@ Users can edit their notes.
 They are notified upon successful update of their note.
 
 ![screenshot of edit message](static/images/editmessage.png)
+
+**Related User Story: As a user I want to be able to update my notes, so that I can make changes to them.**
+**Testing: pass.**
+
+### View
+
+Users can view their notes in one place...
+
+![screenshot of notes view](static/images/viewall.png)
+
+ ... or click the the title to view the contents.
+
+![screenshot of notes detailed view](static/images/viewcontent.png) 
+
+**Related User Story: As a user I want to be able to view my saved notes, so that I can come back to them in the future.**
+**Testing: pass.**
+
+### Mark as Important
+
+Users can mark a note as important; this will be saved in the backend. There is a message next to the 'Mark as important' button that tells the user if the message has been marked important. The text on the button toggles between 'Mark as important' and 'Mark as not important'.
+
+![screenshot of important button](static/images/important.png)
+
+![screenshot of important button](static/images/importantnot.png)
+
+Once a note is marked as important, the layout of the homepage is changed; important notes of kept on the left, and all notes are kept on the right. Note that important notes will appear in both columns.
+
+![screenshot of important layout](static/images/importantlayout.png)
+
+**Related User Story: As a user I want to be able to label a note as important, so that I can see my more important notes in one place.**
+**Testing: pass.**
+
+### No Title Field Required
+
+Sometimes users don't want to think of a title for their note - maybe they just need to quickly note something down, and it doesn't need a title. I have implemented functionality that takes the first three words from the content of the note and sends it to the title field, allowing the user to leave the title blank, but still ensuring there is some title for their later reference.
+
+![screenshot of blank title field](static/images/notitle.png)
+
+![screenshot of title autofilled](static/images/notitleview.png)
+
+**Related User Story: As a user I want to be able to make a quick note without having to worry about the title, so that I can make a note faster.**
+**Testing: pass.**
+
+
+
+
+
 
 
 
