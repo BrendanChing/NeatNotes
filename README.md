@@ -152,9 +152,9 @@ I used dbdiagrams to define my database tables. It was useful as an overview of 
 - NotesDetailView: handles template to view note detail.
 - toggle_important: handles note important status.
 
-### Features
+## Features
 
-#### Register
+### Register
 
 New users are able to register with a username and password, allowing them to login and create notes privately.
 
@@ -164,7 +164,7 @@ New users are able to register with a username and password, allowing them to lo
 **Testing: pass.**
 
 
-#### Login
+### Login
 
 Registered users can login using the form, allowing them access to the site.
 
@@ -177,7 +177,7 @@ Users are notified when they login:
 **Related User Story: As a user I want to be able to login so that I can privately view, create, update and delete my personal notes.**
 **Testing: pass.**
 
-#### Logout 
+### Logout 
 
 Logged-in users can securely logout.
 
@@ -191,7 +191,7 @@ Users are given confirmation of logging out and a thank you message. There is no
 **Testing: pass.**
 
 
-#### Create Note
+### Create Note
 
 Users can create and save notes. They can either use the navbar...
 
@@ -204,7 +204,7 @@ Users can create and save notes. They can either use the navbar...
 **Related User Story: As a user, I want to create a note to help keep my life organised.**
 **Testing: pass.**
 
-#### Delete Note
+### Delete Note
 
 Users can delete notes they no longer need or want.
 
@@ -216,6 +216,20 @@ Users can delete notes they no longer need or want.
 
 **Related User Story: As a user I want to be able to delete a note so that I can get rid of old notes I don't need anymore.**
 **Testing: pass.**
+
+### Edit
+
+Users can edit their notes.
+
+![screenshot of edit button](static/images/edit.png)
+![screenshot of edit page](static/images/editpage.png)
+
+They are notified upon successful update of their note.
+
+![screenshot of edit message](static/images/editmessage.png)
+
+
+
 
 
 

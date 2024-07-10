@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 
 class NotesDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     """
@@ -61,6 +62,7 @@ class NotesCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
+        messages.success(self.request, self.success_message)
         return HttpResponseRedirect(self.get_success_url())
 
 
