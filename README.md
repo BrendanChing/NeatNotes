@@ -335,13 +335,60 @@ The site is fully responsive on all screen sizes. However, the only instance whe
 | Intended Responsiveness?| Yes      | Yes      | Yes      | Yes      | Yes   |
 
 **Notes:**
-Firefox, Safari and Opera highlights fields in blue rather than black when clicked on. However, I did not implement this feature, hence the 'Yes' in the table for Firefox and Opera.
+Firefox, Safari and Opera highlights form fields in blue rather than black when clicked on. However, I did not implement this feature, hence the 'Yes' in the table for Firefox and Opera.
 
 ![screenshot of firefox blue fields](static/images/firefox.png)
 
 Safari renders the navbar in a dark navy blue, rather than black.
 
 ![picture of app on safari](static/images/safari.jpg)
+
+## Bugs
+
+### Not all Notes showing under 'All Notes'
+On the notes list page, my intention was to have notes marked as important on the left and all notes on the right. However I mistakenly wrote logic to display important notes on the left, but only none-important notes on the right. It was an easy fix by simply removing an if statement.
+
+![picture of bug before](static/images/bugifstatementsitebefore.png)
+
+![picture of bug before](static/images/bugifstatementbefore.png)
+
+![picture of bug before](static/images/bugifstatementafter.png)
+
+![picture of bug before](static/images/bugifstatementsiteafter.png)
+
+### Users Name not showing in the Navbar
+I had a problem with displaying the users name in the navbar. Initially, I thought it hadn't rendered at all, but upon inspection of the element, I found that it was rending as black on black, ignoring my css file that specifies white text. I had not run 'collect static', when I did, it worked, showing the username in white over the navbar.
+
+![picture of bug before](static/images/usersnamebefore.png)
+
+![picture of bug before](static/images/usersnameafter.png)
+
+### Problems with Deployment
+I had added an additional directory which held all my apps inside it. This initially only caused a few minor complications with link pathing, but I worked around it, thinking it was fine, but when I came to deploy, heroku threw the errors, 'build failed' and 'push rejected'. After some googling, I realised the unnecessary folder meant heroku was unable to identify my project as a django application. I was concerned this would become a tedious task of moving all my files into new folders one by one before deleting the unnecessary folder, but chatgpt gave me the command 'mv folder_name/* .' which moved everything out the parent directory. I then deleted the folder, and it worked!
+
+![picture of command line code](static/images/folderbugcode.png)
+
+### Create Success Messages not Showing
+All success messages for sign-up, login, create, delete and edit were not working initially, however I quickly realised I had not imported 'SuccessMessageMixin' to my view, when I did, I believed I had solved the issue, and moved on. Upon testing, however, I noticed the create notification was not showing up. Inspecting the create view, I found that the function that identifies the user and saves the note to their database table, was stopping the success message. I added one line of code to fix this: messages.success(self.request, self.success_message).
+
+![picture of code for success message bug](static/images/bugsuccessbefore.png)
+
+![picture of code for success message bug](static/images/bugsuccessafter.png)
+
+### Important Button Functionality
+I initially attempted to use ajax javascript to implement functionality to mark notes as important. I struggled to get it to work, so looked for alternative methods, finding that a function based view was a simpler and cleaner solution. The functionality then worked.
+
+![picture of view](static/images/bugsuccessafter.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
