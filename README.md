@@ -104,9 +104,9 @@ Acceptance Criteria:
 
 I created wireframes on Balsamiq in order to visualise the layout of the site. While the finished product differs from the wireframes quite significantly, they still served me well as a 
 rough guide. Some features shown in the wireframes have not been implemented due to a lack of time. The design is simple as I believe a notes app should be, using only black and white, and 
-with no intrusive content on the page.
+with no intrusive content on the page. [View all wireframes in this document.](docs/NeatNotesWireframes.bmpr)
 
-[Link to wireframes document](docs/wireframes.bmpr)
+![wirefram screenshot](static/images/wireframe.png)
 
 ### Workflow
 
@@ -500,46 +500,3 @@ Then back to Heroku:
     - [What are Django class based views & should you use them? by Dennis Ivy](https://www.youtube.com/watch?v=RE0HlKch_3U&ab_channel=DennisIvy)
     - [Django Tutorial by Net Ninja](https://www.youtube.com/watch?v=3EzKBFc9_MQ&ab_channel=NetNinja) 
 - [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
