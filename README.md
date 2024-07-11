@@ -311,7 +311,7 @@ Sometimes users don't want to think of a title for their note - maybe they just 
 
 ### Logo
 
-As a site owner I wanted a logo for my brand that is simple and, I hope, distinctive and quickly recognisable. I designed a white logo for the navbar, then inverted the colours to make a black one for the favicon. I designed it on microsoft paint.
+As a site owner I wanted a logo for my brand that is simple, distinctive and quickly recognisable. I designed a white logo for the navbar, then inverted the colours to make a black one for the favicon. I designed it on microsoft paint.
 
 ![screenshot of logowhite](static/images/NeatNotesLogo.jpg)
 ![screenshot of logoblack](static/images/NeatNotesLogo.jpg)
@@ -390,14 +390,12 @@ All success messages for sign-up, login, create, delete and edit were not workin
 ### Important Button Functionality
 I initially attempted to use ajax javascript to implement functionality to mark notes as important. I struggled to get it to work, so looked for alternative methods, finding that a function based view was a simpler and cleaner solution. The functionality then worked.
 
-![picture of view](static/images/bugsuccessafter.png)
-
 ## Lighthouse Performace Testing
-**Mobile:**
+### Mobile
 ![picture of lighthouse performance mobile](static/images/lighthousemobilemain.png)
 ![picture of lighthouse diognostics mobile](static/images/lighthousemobilediognositics.png)
 
-**Desktop:**
+### Desktop
 ![picture of lighthouse performance desktop](static/images/lighthousedesktopmain.png)
 ![picture of lighthouse diognostics desktop](static/images/lighthousedesktopdiagnostics.png)
 
@@ -409,6 +407,106 @@ This is documented in the features section where each feature is shown working, 
 As a user I want to be able to share my notes, so that others can view them.
 <br>
 The functionality for this was not implemented due to complexity and lack of time.
+
+## Code Validation
+
+| Language | Validator                                     |
+|----------|-----------------------------------------------|
+| HTML     | https://validator.w3.org/                     |
+| CSS      | https://jigsaw.w3.org/css-validator/validator |
+
+There is no Javascript to validate.
+
+### Errors
+
+I encountered an error on a few pages stating that the action attribute cannot be empty on a few html pages. I removed the attribute entirely and validated them again, this time receiving no errors, aside from the ones shown below. However, this is part of the django form, so does not require fixing.
+
+![screenshot of validation error on register.html](static/images/validregistrationerror.png)
+
+## Future Features
+
+### Share
+
+As per the unfulfilled user story, it would be a nice if users could share their notes via email or social media. The implementation of this, however, would be quite time consuming.
+
+### Search
+
+A search bar would be useful for users with a lot of notes.
+
+### Folders
+
+Allow the user to create folders, which would be shown on the homepage, that they could put notes in for better organisation.
+
+## Technologies
+
+- [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
+- [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
+- [Python](https://www.python.org) used as the back-end programming language.
+- [Git](https://git-scm.com) used for version control.
+- [GitHub](https://github.com) used for secure online code storage.
+- [Heroku](https://www.heroku.com) used for hosting the deployed site.
+- [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
+- [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [Django](https://www.djangoproject.com) used as the Python framework for the site.
+- [PostgreSQL](https://www.postgresql.org) used as the relational database management.
+
+### Heroku Deployment
+
+I encountered some problems with deployment that can be viewed in the bugs section under [Problems with Deployment](#problems-with-deployment). The steps below show the correct steps to take to deploy to heroku.
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Steps:
+
+1. Created a new app on Heroku
+2. Created a unique name for the app
+3. Selected the region for the app
+4. Selected "Create App"
+
+In my workspace:
+
+1. Installed gunicorn
+2. `pip3 freeze --local > requirements.txt`
+3. Created a Procfile
+4. Added a line of code for Heroku deployment: `web: gunicorn neatnotes.wsgi`
+
+Then back to Heroku:
+
+1. Clicked on the "Settings" tab
+2. Clicked to "Reveal config vars"
+3. Set the following environmental variables:
+  - `DATABASE_URL`
+  - `SECRET_KEY`
+  - *These variables were also stored in a file, `env.py`, which is ignored by the git version control by being placed in the `.gitignore` file*
+
+4. Connected the app to GitHub
+  - Went to the "Deploy" tab
+  - Selected "GitHub" as the deployment method
+  - Provided the URL to my GitHub repository
+  - Ensured that the "main" branch was where the app was being deployed from
+  - Clicked "Deploy Branch"
+  - Opened the app to ensure it was successfully deployed
+
+  **[Deployed Link](https://neatnotes-273c093a6f6f.herokuapp.com/)**
+
+  ## Credits
+- ChatGPT used for debugging
+- Code Institute LMS
+- Balsamiq used for wireframes
+- Logo created in Microsoft Paint
+- Various YouTube videos:
+    - [Python Django Tutorial for Beginners by Programming with Mosh](https://www.youtube.com/watch?v=rHux0gMZ3Eg&t=895s&ab_channel=ProgrammingwithMosh)
+    - [Django 4 Note-Taking App Tutorial by Prime Inspire](https://www.youtube.com/watch?v=QdBjcdAZPFQ&list=PLi9pEBARzYqCpCOtIZ1oRoT2xadIDc8Ya&ab_channel=PrimeInspire)
+    - [What are Django class based views & should you use them? by Dennis Ivy](https://www.youtube.com/watch?v=RE0HlKch_3U&ab_channel=DennisIvy)
+    - [Django Tutorial by Net Ninja](https://www.youtube.com/watch?v=3EzKBFc9_MQ&ab_channel=NetNinja) 
+- [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+
+
+
+
+
+
+
 
 
 

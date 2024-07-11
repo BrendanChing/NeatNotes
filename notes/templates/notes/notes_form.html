@@ -8,7 +8,7 @@
             <div class="card-header"><strong>Create Note</strong></div>
             
             <!-- Form for creating a new note -->
-            <form action="" method="post">
+            <form method="post">
                 {% csrf_token %}
                 <!-- Render form fields -->
                 {{ form.as_p }}
