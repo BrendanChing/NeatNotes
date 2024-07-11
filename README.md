@@ -168,7 +168,7 @@ New users are able to register with a username and password, allowing them to lo
 **Related User Story: As a user I want to be able to register so that I can create an account and login in the future.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
 
 
 ### Login
@@ -184,7 +184,7 @@ Users are notified when they login:
 **Related User Story: As a user I want to be able to login so that I can privately view, create, update and delete my personal notes.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
 
 ### Logout 
 
@@ -199,7 +199,7 @@ Users are given confirmation of logging out and a thank you message. There is no
 **Related User Story: As a user, I want to be able to logout, so I know my notes are secure when I am not using the app.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
 
 
 ### Navbar
@@ -211,7 +211,7 @@ Navigation is made simple by the navbar. Users can navigate between, home, logou
 **Related User Story: As a user I want to be able to navigate the site easily, so that I have a better user experience.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
 
 
 ### Create Note
@@ -231,7 +231,7 @@ Users are notified upon successful creation of notes.
 **Related User Story: As a user, I want to create a note to help keep my life organised.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
 
 ### Delete Note
 
@@ -246,7 +246,7 @@ Users can delete notes they no longer need or want.
 **Related User Story: As a user I want to be able to delete a note so that I can get rid of old notes I don't need anymore.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
 
 ### Edit
 
@@ -262,7 +262,7 @@ They are notified upon successful update of their note.
 **Related User Story: As a user I want to be able to update my notes, so that I can make changes to them.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
 
 ### View
 
@@ -277,7 +277,7 @@ Users can view their notes in one place...
 **Related User Story: As a user I want to be able to view my saved notes, so that I can come back to them in the future.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
 
 ### Mark as Important
 
@@ -294,7 +294,7 @@ Once a note is marked as important, the layout of the homepage is changed; impor
 **Related User Story: As a user I want to be able to label a note as important, so that I can see my more important notes in one place.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
 
 ### No Title Field Required
 
@@ -307,7 +307,19 @@ Sometimes users don't want to think of a title for their note - maybe they just 
 **Related User Story: As a user I want to be able to make a quick note without having to worry about the title, so that I can make a note faster.**
 <br>
 
-**Testing: pass.**
+**Testing: Feature and userstory pass**
+
+### Logo
+
+As a site owner I wanted a logo for my brand that is simple and, I hope, distinctive and quickly recognisable. I designed a white logo for the navbar, then inverted the colours to make a black one for the favicon. I designed it on microsoft paint.
+
+![screenshot of logowhite](static/images/NeatNotesLogo.jpg)
+![screenshot of logoblack](static/images/NeatNotesLogo.jpg)
+
+**Related User Story: As a site owner, I want a nice logo and distinctive colours to advertise my brand.**
+<br>
+**Testing:**
+Testing this feature and userstory is more difficult; I am happy with the logo, but whether the logo is nice is subjective. While I am also happy with simple black and white colour scheme, it would be a stretch to consider it distinctive. On balance I will consider this a partial fail of the user story.
 
 ## Testing
 
@@ -388,6 +400,15 @@ I initially attempted to use ajax javascript to implement functionality to mark 
 **Desktop:**
 ![picture of lighthouse performance desktop](static/images/lighthousedesktopmain.png)
 ![picture of lighthouse diognostics desktop](static/images/lighthousedesktopdiagnostics.png)
+
+### Feature and User Story Testing
+This is documented in the features section where each feature is shown working, along with the user story it satisfies. [Go back to Features.](#features)
+
+**Unsatisfied User Stories:**
+
+As a user I want to be able to share my notes, so that others can view them.
+<br>
+The functionality for this was not implemented due to complexity and lack of time.
 
 
 
