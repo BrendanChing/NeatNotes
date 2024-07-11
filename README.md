@@ -380,6 +380,15 @@ I initially attempted to use ajax javascript to implement functionality to mark 
 
 ![picture of view](static/images/bugsuccessafter.png)
 
+## Lighthouse Performace Testing
+**Mobile:**
+![picture of lighthouse performance mobile](static/images/lighthousemobilemain.png)
+![picture of lighthouse diognostics mobile](static/images/lighthousemobilediognositics.png)
+
+**Desktop:**
+![picture of lighthouse performance desktop](static/images/lighthousedesktopmain.png)
+![picture of lighthouse diognostics desktop](static/images/lighthousedesktopdiagnostics.png)
+
 
 
 
