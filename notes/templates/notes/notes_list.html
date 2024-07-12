@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-6">
             <h2 class="fs-3 text-center">All Notes</h2>
-            <!-- If note is not important it is displayed on the right -->
+            <!-- display all notes on the right -->
             {% for note in notes %}
                     <div class="mb-3 d-flex justify-content-center">
                         <a href="{% url 'notes_detail' pk=note.id %}" class="btn btn-dark btn-sm fs-5">{{ note.title }}</a>

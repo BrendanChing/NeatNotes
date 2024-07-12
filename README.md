@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to NeatNotes, a clean and simple app where user experience is paramount.
+Welcome to NeatNotes, a clean, simple app where user experience is paramount. The site is a great place to store your notes whether it be two words or an essay! The layout is simple, meaning it's easy to stay organised with your notes. The app can be used by anyone with internet access, so create an account and start noting, safe in the knowledge that your account is private and secure.
 
 ![Screenshot of site](static/images/readmeintro.png)
 
@@ -106,9 +106,9 @@ Acceptance Criteria:
 
 ## Planning
 
-## Design
+### Design
 
-The design is simple as I believe a notes app should be, using only black and white, and with no intrusive content on the page. Most of the styling is done via bootstrap's built in classes: the navbar is built using .navbar-dark and buttons with .btn-dark. There is no styling on the text, aside from the user's name, which is in white. The Django forms used are left in their default state. 
+The design is simple as I believe a notes app should be, using only black and white, and with no intrusive content on the page. Most of the styling is done via bootstrap's built in classes: the navbar is built using .navbar-dark and buttons with .btn-dark. The front-end forms use bootstrap's .card class. There is no styling on the text, aside from the user's name which is in white.
 
 I designed a logo for the site which I placed in the navbar and as a favicon. Go to [Features](#logo) for more on the logo.
 
@@ -181,10 +181,14 @@ New users are able to register with a username and password, allowing them to lo
 
 ![screenshot of registration](static/images/signup.png)
 
+Users are notified when they sign-up:
+
+![screenshot of sign-up notification](static/images/signup_notification.png)
+
 **Related User Story: As a user I want to be able to register so that I can create an account and login in the future.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 
 ### Login
@@ -200,7 +204,7 @@ Users are notified when they login:
 **Related User Story: As a user I want to be able to login so that I can privately view, create, update and delete my personal notes.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 ### Logout 
 
@@ -215,19 +219,23 @@ Users are given confirmation of logging out and a thank you message. There is no
 **Related User Story: As a user, I want to be able to logout, so I know my notes are secure when I am not using the app.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 
 ### Navbar
 
-Navigation is made simple by the navbar. Users can navigate between, home, logout and new note. The logo also links to the homepage.
+Navigation is made simple by the navbar. Logged-in users can navigate between home, logout and new note. The logo also links to the homepage.
 
-![screenshot of navbar](static/images/navbar.png)
+![screenshot of logged-in navbar](static/images/navbar.png)
+
+Users not logged-in see this navbar where they can login or sign-up.
+
+![screenshot of navbar not logged in](static/images/navbar_notsignin.png)
 
 **Related User Story: As a user I want to be able to navigate the site easily, so that I have a better user experience.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 
 ### Create Note
@@ -247,7 +255,7 @@ Users are notified upon successful creation of notes.
 **Related User Story: As a user, I want to create a note to help keep my life organised.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 ### Delete Note
 
@@ -262,7 +270,7 @@ Users can delete notes they no longer need or want.
 **Related User Story: As a user I want to be able to delete a note so that I can get rid of old notes I don't need anymore.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 ### Edit
 
@@ -278,7 +286,7 @@ They are notified upon successful update of their note.
 **Related User Story: As a user I want to be able to update my notes, so that I can make changes to them.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 ### View
 
@@ -293,7 +301,7 @@ Users can view their notes in one place...
 **Related User Story: As a user I want to be able to view my saved notes, so that I can come back to them in the future.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 ### Mark as Important
 
@@ -310,7 +318,7 @@ Once a note is marked as important, the layout of the homepage is changed; impor
 **Related User Story: As a user I want to be able to label a note as important, so that I can see my more important notes in one place.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 
 ### Username in Navbar
@@ -322,7 +330,7 @@ Users like to see their username somewhere on the page so they know they are log
 
 **Related User Story: As a user, I want to see my username somewhere on the page so I know I'm logged in.**
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 ### No Title Field Required
 
@@ -335,7 +343,7 @@ Sometimes users don't want to think of a title for their note - maybe they just 
 **Related User Story: As a user I want to be able to make a quick note without having to worry about the title, so that I can make a note faster.**
 <br>
 
-**Testing: Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
 
 ### Logo
 
@@ -346,14 +354,15 @@ As a site owner I wanted a logo for my brand that is simple, distinctive and qui
 
 **Related User Story: As a site owner, I want a nice logo and distinctive colours to advertise my brand.**
 <br>
-**Testing:**
-Testing this feature and userstory is more difficult; I am happy with the logo, but whether the logo is nice is subjective. While I am also happy with simple black and white colour scheme, it would be a stretch to consider it distinctive. On balance I will consider this a partial fail of the user story.
+
+**[Testing](#feature-and-user-story-testing):**
+Testing this feature and userstory is more difficult; I am happy with the logo, but whether the logo is nice is subjective. While I am also happy with simple black and white colour scheme, it would be a stretch to consider it distinctive. I will let you be the judge of this.
 
 ## Testing
 
 ### Responsiveness
 
-The site is fully responsive on all screen sizes. However, the only instance where alternative formatting is required is on the homepage for mobile phones, and only when the user has some notes in the 'important' catagory. All other pages have responsive django forms and nothing else.
+The site is fully responsive on all screen sizes. However, the only instance where alternative formatting is required is on the homepage for mobile phones, and only when the user has some notes in the 'important' catagory. I tested all pages regardless, finding that they are indeed fully responsive. 
 
 #### Phone
 
@@ -383,7 +392,7 @@ Safari renders the navbar in a dark navy blue, rather than black.
 
 ![picture of app on safari](static/images/safari.jpg)
 
-## Bugs
+## Bugs (all now fixed)
 
 ### Not all Notes showing under 'All Notes'
 On the notes list page, my intention was to have notes marked as important on the left and all notes on the right. However I mistakenly wrote logic to display important notes on the left, but only none-important notes on the right. It was an easy fix by simply removing an if statement.
@@ -404,7 +413,7 @@ I had a problem with displaying the users name in the navbar. Initially, I thoug
 ![picture of bug before](static/images/usersnameafter.png)
 
 ### Problems with Deployment
-I had added an additional directory which held all my apps inside it. This initially only caused a few minor complications with link pathing, but I worked around it, thinking it was fine, but when I came to deploy, heroku threw the errors, 'build failed' and 'push rejected'. After some googling, I realised the unnecessary folder meant heroku was unable to identify my project as a django application. I was concerned this would become a tedious task of moving all my files into new folders one by one before deleting the problematic folder, but chatgpt gave me the command 'mv folder_name/* .' which moved everything out the parent directory. I then deleted the folder, and it worked!
+I had added an unnecessary directory which held all my apps inside it. This initially only caused a few minor complications with link pathing, but I worked around it, thinking it was fine, but when I came to deploy, heroku threw the errors, 'build failed' and 'push rejected'. After some googling, I realised the unnecessary folder meant heroku was unable to identify my project as a django application. I was concerned this would become a tedious task of moving all my files into new folders one by one before deleting the problematic folder, but chatgpt gave me the command 'mv folder_name/* .' which moved everything out the parent directory. I then deleted the folder, and it worked!
 
 ![picture of command line code](static/images/folderbugcode.png)
 
@@ -428,13 +437,46 @@ I initially attempted to use ajax javascript to implement functionality to mark 
 ![picture of lighthouse diognostics desktop](static/images/lighthousedesktopdiagnostics.png)
 
 ### Feature and User Story Testing
-This is documented in the features section where each feature is shown working, along with the user story it satisfies. [Go back to Features.](#features)
+This is documented in the features section where each feature is shown working, along with the user story it satisfies. [Go back to Features](#features) or click on a user story to view the specific feature relating to it. You can return here easily by clicking the on 'Testing' under each feature. User stories not addressed by the features section are shown below the user stories.
 
-**Unsatisfied User Stories:**
+**[As a user I want to create a note to help keep my life organised.](#create-note)**
 
-As a user I want to be able to share my notes, so that others can view them.
-<br>
-The functionality for this was not implemented due to complexity and lack of time.
+**[As a user I want to be able to view my saved notes, so that I can come back to them in the future.](#view)**
+
+**[As a user I want to be able to update my notes, so that I can make changes to them.](#edit)**
+
+**[As a user I want to be able to delete a note so that I can get rid of old notes I don't need anymore.](#delete-note)**
+
+**[As a user I want to be able to login so that I can privately view, create, update and delete my personal notes.](#login)** 
+
+**[As a user, I want to be able to logout, so I know my notes are secure when I am not using the app.](#logout)**
+
+**[As a user I want to be able to register so that I can create an account and login in the future.](#register)**
+
+**As a user I want a site that is clearly laid out so that I can see my notes clearly.**
+
+**[As a user I want to be able to navigate the site easily, so that I have a better user experience.](#navbar)**
+
+**[As a user I want to be able to label a note as important, so that I can see my more important notes in one place.](#mark-as-important)**
+
+**[As a site owner, I want a nice logo and distinctive colours to advertise my brand.](#logo)**
+
+**[As a user I want to be able to make a quick note without having to worry about the title, so that I can make a note faster.](#no-title-field-required)**
+
+**As a user I want to be able to share my notes, so that others can view them.**
+
+**[As a user, I want to see my username somewhere on the page so I know I'm logged in.](#username-in-navbar)**
+
+#### Unaddressed User Story
+
+**As a user I want a site that is clearly laid out so that I can see my notes clearly.**
+
+I believe this user story passes testing as the site is very clear and simple.
+
+#### User Story not Satisfied:
+
+**As a user I want to be able to share my notes, so that others can view them.**
+The functionality for this was not implemented due to complexity and lack of time. I had decided not to do this during planning and it was marked as 'Won't do' on Github.
 
 ## Code Validation
 
@@ -448,7 +490,9 @@ There is no Javascript to validate.
 
 ### HTML and CSS
 
-All HTML and CSS files validated successfully:
+I encountered a few errors while validating my code, most of which were easy fixes. However, there are some errors caused by bootstrap and django which cannot be changed. I carefully checked these errors to make sure they were not mine.
+
+All HTML and CSS files validated:
 - home
   - login.html
   - logout.html
@@ -463,11 +507,13 @@ All HTML and CSS files validated successfully:
   - style.css
   - base.html
 
-  **Put Document of screenshots here**
+**View screenshots of all validations [here.](https://github.com/BrendanChing/NeatNotes/tree/main/static/images/html_css_validation)**
 
 ### Python
 
-List of Python files validated successfully:
+I encountered some errors while validating my python code. These were mostly due to empty spaces at the end of lines and lines being too long. All errors were fixed, then revalidated. All python files have now been validated with no errors.
+
+All Python Files Validated:
 - home
   - admin.py
   - apps.py
@@ -490,15 +536,6 @@ List of Python files validated successfully:
   - views.py
 
 **View screenshots of all validations [here.](https://github.com/BrendanChing/NeatNotes/tree/main/static/images/python_validation)**
-
-
-
-
-### Errors
-
-I encountered an error on a few pages stating that the action attribute cannot be empty on a few html pages. I removed the attribute entirely and validated them again, this time receiving no errors, aside from the ones shown below. However, this is part of the django form, so does not require fixing.
-
-![screenshot of validation error on register.html](static/images/validregistrationerror.png)
 
 ## Future Features
 
@@ -529,9 +566,7 @@ Allow the user to create folders, which would be shown on the homepage, that the
 
 ### Heroku Deployment
 
-I encountered some problems with deployment that can be viewed in the bugs section under [Problems with Deployment](#problems-with-deployment). The steps below show the correct steps to take to deploy to heroku.
-
-This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+I encountered some problems with deployment that can be viewed in the bugs section under [Problems with Deployment](#problems-with-deployment). The steps below are copied directly from [this readme by doctypeKieran](https://github.com/doctypeKieran/ci-capstone-project/blob/main/README.md), showing the correct steps (which I later took) to deploy to heroku.
 
 Steps:
 
@@ -572,9 +607,10 @@ Then back to Heroku:
 - Balsamiq used for wireframes
 - Logo created in Microsoft Paint
 - Various YouTube videos:
-    - [Python Django Tutorial for Beginners by Programming with Mosh](https://www.youtube.com/watch?v=rHux0gMZ3Eg&t=895s&ab_channel=ProgrammingwithMosh)
-    - [Django 4 Note-Taking App Tutorial by Prime Inspire](https://www.youtube.com/watch?v=QdBjcdAZPFQ&list=PLi9pEBARzYqCpCOtIZ1oRoT2xadIDc8Ya&ab_channel=PrimeInspire)
-    - [What are Django class based views & should you use them? by Dennis Ivy](https://www.youtube.com/watch?v=RE0HlKch_3U&ab_channel=DennisIvy)
-    - [Django Tutorial by Net Ninja](https://www.youtube.com/watch?v=3EzKBFc9_MQ&ab_channel=NetNinja) 
+    - I used [Python Django Tutorial for Beginners by Programming with Mosh](https://www.youtube.com/watch?v=rHux0gMZ3Eg&t=895s&ab_channel=ProgrammingwithMosh) to help me understand the basics of django.
+    - I used [Django 4 Note-Taking App Tutorial by Prime Inspire](https://www.youtube.com/watch?v=QdBjcdAZPFQ&list=PLi9pEBARzYqCpCOtIZ1oRoT2xadIDc8Ya&ab_channel=PrimeInspire) to help me with the basic setup and login functionality. I also used some of the same stlyes, such as the bootstrap navbar and cards.
+    - I used [What are Django class based views & should you use them? by Dennis Ivy](https://www.youtube.com/watch?v=RE0HlKch_3U&ab_channel=DennisIvy) to help me understand class based views.
+    - I used [Django Tutorial by Net Ninja](https://www.youtube.com/watch?v=3EzKBFc9_MQ&ab_channel=NetNinja) at various times to help with my general understanding of django.
 - [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
--[fontawesome](https://fontawesome.com/) was used for the plus sign.
+- [fontawesome](https://fontawesome.com/) was used for the plus sign.
+- [doctypeKieran's](https://github.com/doctypeKieran) readme for heroku deployment steps.
