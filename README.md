@@ -342,7 +342,7 @@ Sometimes users don't want to think of a title for their note - maybe they just 
 As a site owner I wanted a logo for my brand that is simple, distinctive and quickly recognisable. I designed a white logo for the navbar, then inverted the colours to make a black one for the favicon. I designed it on microsoft paint.
 
 ![screenshot of logowhite](static/images/neatnoteslogo.jpg)
-![screenshot of logoblack](static/images/neatnoteslogoblack.jpg)
+![screenshot of logoblack](static/images/neatnoteslogoblack.png)
 
 **Related User Story: As a site owner, I want a nice logo and distinctive colours to advertise my brand.**
 <br>
