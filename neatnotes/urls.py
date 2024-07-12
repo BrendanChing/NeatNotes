@@ -4,6 +4,8 @@ from django.urls import path, include
 urlpatterns = [
     # Routes all urls to views
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),     # Uses all urlpatterns in home app
-    path('neat/', include('notes.urls')),       # Uses all urlpatterns in notes app
+    # Uses all urlpatterns in home app
+    path('', include('home.urls')),
+    # Uses all urlpatterns in notes app
+    path('neat/', include('notes.urls')),
 ]

@@ -1,12 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Notes
-from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import (
+    CreateView, ListView, DetailView, UpdateView, DeleteView
+)
 from .forms import NotesForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+
 
 class NotesDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     """
@@ -69,7 +72,8 @@ class NotesCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 class NotesListView(LoginRequiredMixin, ListView):
     """
     View to display a list of notes for logged-in users.
-    Orders the notes by creation date and passes a flag indicating if any notes are marked as important.
+    Orders the notes by creation date and passes a flag indicating
+    if any notes are marked as important.
     """
     model = Notes
     context_object_name = "notes"
@@ -79,19 +83,23 @@ class NotesListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         """
-        Return the notes belonging to the logged-in user, ordered by creation date.
+        Return the notes belonging to the logged-in user,
+        ordered by creation date.
         """
         return self.request.user.notes.all().order_by(*self.ordering)
 
     def get_context_data(self, **kwargs):
         """
-        Adds a context variable to indicate if any of the user's notes are marked as important.
+        Adds a context variable to indicate if any of
+        the user's notes are marked as important.
         """
         context = super().get_context_data(**kwargs)
         # Calculate if there are any important notes
-        has_important_notes = any(note.is_important for note in context['notes'])
+        has_important_notes = any(
+            note.is_important for note in context['notes']
+        )
         context['has_important_notes'] = has_important_notes
-        return context    
+        return context
 
 
 class NotesDetailView(LoginRequiredMixin, DetailView):
@@ -109,10 +117,12 @@ class NotesDetailView(LoginRequiredMixin, DetailView):
         """
         return self.request.user.notes.all()
 
+
 def toggle_important(request, pk):
     """
     Toggle the importance of a note.
-    Retrieves the note by primary key (pk), toggles its importance status, and redirects to the note detail page.
+    Retrieves the note by primary key (pk), toggles its
+    importance status, and redirects to the note detail page.
     """
     note = get_object_or_404(Notes, pk=pk)
     note.is_important = not note.is_important

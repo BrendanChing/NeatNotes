@@ -404,11 +404,11 @@ I had a problem with displaying the users name in the navbar. Initially, I thoug
 ![picture of bug before](static/images/usersnameafter.png)
 
 ### Problems with Deployment
-I had added an additional directory which held all my apps inside it. This initially only caused a few minor complications with link pathing, but I worked around it, thinking it was fine, but when I came to deploy, heroku threw the errors, 'build failed' and 'push rejected'. After some googling, I realised the unnecessary folder meant heroku was unable to identify my project as a django application. I was concerned this would become a tedious task of moving all my files into new folders one by one before deleting the unnecessary folder, but chatgpt gave me the command 'mv folder_name/* .' which moved everything out the parent directory. I then deleted the folder, and it worked!
+I had added an additional directory which held all my apps inside it. This initially only caused a few minor complications with link pathing, but I worked around it, thinking it was fine, but when I came to deploy, heroku threw the errors, 'build failed' and 'push rejected'. After some googling, I realised the unnecessary folder meant heroku was unable to identify my project as a django application. I was concerned this would become a tedious task of moving all my files into new folders one by one before deleting the problematic folder, but chatgpt gave me the command 'mv folder_name/* .' which moved everything out the parent directory. I then deleted the folder, and it worked!
 
 ![picture of command line code](static/images/folderbugcode.png)
 
-### Create Success Messages not Showing
+### 'Create' Success Messages not Showing
 All success messages for sign-up, login, create, delete and edit were not working initially, however I quickly realised I had not imported 'SuccessMessageMixin' to my view, when I did, I believed I had solved the issue, and moved on. Upon testing, however, I noticed the create notification was not showing up. Inspecting the create view, I found that the function that identifies the user and saves the note to their database table, was stopping the success message. I added one line of code to fix this: messages.success(self.request, self.success_message).
 
 ![picture of code for success message bug](static/images/bugsuccessbefore.png)
@@ -442,8 +442,57 @@ The functionality for this was not implemented due to complexity and lack of tim
 |----------|-----------------------------------------------|
 | HTML     | https://validator.w3.org/                     |
 | CSS      | https://jigsaw.w3.org/css-validator/validator |
+| Python   | https://pep8ci.herokuapp.com/                 |
 
 There is no Javascript to validate.
+
+### HTML and CSS
+
+All HTML and CSS files validated successfully:
+- home
+  - login.html
+  - logout.html
+  - register.html
+  - welcome.html
+- notes
+  - notes_delete.html
+  - notes_detail.html
+  - notes_form.html
+  - notes_list.html
+- static
+  - style.css
+  - base.html
+
+  **Put Document of screenshots here**
+
+### Python
+
+List of Python files validated successfully:
+- home
+  - admin.py
+  - apps.py
+  - models.py
+  - tests.py
+  - urls.py
+  - views.py
+- neatnotes
+  - asgi.py
+  - settings.py
+  - urls.py
+  - wsgi.py
+- notes
+  - admin.py
+  - apps.py  
+  - forms.py
+  - models.py
+  - tests.py
+  - urls.py
+  - views.py
+
+**View screenshots of all validations [here.](https://github.com/BrendanChing/NeatNotes/tree/main/static/images/python_validation)**
+
+
+
 
 ### Errors
 

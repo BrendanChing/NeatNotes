@@ -20,7 +20,6 @@ if os.path.isfile("env.py"):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -35,7 +34,6 @@ ALLOWED_HOSTS = [
     '8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net',
     '.herokuapp.com',
     'neatnotes-273c093a6f6f.herokuapp.com',
-
 ]
 
 INSTALLED_APPS = [
@@ -69,9 +67,7 @@ ROOT_URLCONF = 'neatnotes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'static/templates'
-        ],
+        'DIRS': [BASE_DIR / 'static/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,33 +81,40 @@ TEMPLATES = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net', # Dev environment
+    # Dev environment
+    'https://8000-brendanching-neatnotes-4lr6jcek035.ws.codeinstitute-ide.net',
+    # Deployment
     'https://*.herokuapp.com',
-    'https://neatnotes-273c093a6f6f.herokuapp.com/', # Deployed site
+    'https://neatnotes-273c093a6f6f.herokuapp.com/',
 ]
 
-WSGI_APPLICATION = 'neatnotes.wsgi.application' # Allows communication from python to the browser
+# Allows communication from python to the browser
+WSGI_APPLICATION = 'neatnotes.wsgi.application'
 
 DATABASES = {
-'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) # Fetches the value of DATABASE_URL from the env.py file
+    # Fetches the value of DATABASE_URL from the env.py file
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+                 'UserAttributeSimilarityValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+                 'MinimumLengthValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+                 'CommonPasswordValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+                 'NumericPasswordValidator'),
     },
 ]
 
@@ -127,15 +130,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # Specifies the directory to collect static files during deployment. 
+# Specifies the directory to collect static files during deployment
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
