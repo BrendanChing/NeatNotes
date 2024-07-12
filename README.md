@@ -30,83 +30,99 @@ Acceptance Criteria:
 **As a user I want to be able to update my notes, so that I can make changes to them.**
 
 Acceptance Criteria:
-- When user clicks on a note there will be an edit button, making the text and title editable
-- Save button will update the note
+- When the user clicks on a note there will be an edit button, making the text and title editable.
+- save button will update the note
 
 **As a user I want to be able to delete a note so that I can get rid of old notes I don't need anymore.**
 
 Acceptance Criteria:
-- Button to delete note
-- Alert to confirm deletion or go back
+- button to delete note
+- alert to confirm deletion or go back
 
 **As a user I want to be able to login so that I can privately view, create, update and delete my personal notes.**
 
 Acceptance Criteria:
-- Front end form to input login details
-- Login details checked backend
-- Messages to tell user if the email/password is incorrect
-- Submit button
+- front end form to input login details
+- login details checked backend
+- messages to tell user if the email/password is incorrect
+- submit button
 
 **As a user, I want to be able to logout, so I know my notes are secure when I am not using the app.**
 
 Acceptance Criteria:
-- Button for logging out
-- Confirmation message when logged out
-- No access to site until logged in again
+- button for logging out
+- confirmation message when logged out
+- no access to site until logged in again
 
 **As a user I want to be able to register so that I can create an account and login in the future.**
 
 Acceptance Criteria:
-- Front end form for user details
-- Account created upon form submission
-- User can login next time
+- front end form for user details
+- account created upon form submission
+- user can login next time
 
 **As a user I want a site that is clearly laid out so that I can see my notes clearly.**
 
 Acceptance Criteria:
-- Clean, simple frontend layout for easy reading
-- Buttons purpose are either labelled or otherwise obvious
+- clean, simple frontend layout for easy reading
+- buttons purpose are either labelled or otherwise obvious
 
 **As a user I want to be able to navigate the site easily, so that I have a better user experience.**
 
 Acceptance Criteria:
-- Clear buttons to bring up a list of saved notes
-- Clicking on a note title will bring it up
-- Clear logout button
+- clear buttons to bring up a list of saved notes
+- clicking on a note title will bring it up
+- clear logout button
 
 **As a user I want to be able to label a note as important, so that I can see my more important notes in one place.**
 
 Acceptance Criteria:
-- Star button next to each note to mark as important
-- Important notes added to new set in the backend
-- Button to undo important label and send back to normal notes
+- button next to each note to mark as important
+- important notes added to new set in the backend
+- button to undo important label and send back to normal notes
 
 **As a site owner, I want a nice logo and distinctive colours to advertise my brand.**
 
 Acceptance Criteria:
-- Well designed logo
-- Harmonious colour palette chosen
+- well designed logo
+- harmonious colour palette chosen
 
 **As a user I want to be able to make a quick note without having to worry about the title, so that I can make a note faster.**
 
 Acceptance Criteria:
-- Title field autofilled with the first three words of the note if no title is specified upon created of the note.
+- The title field autofilled with the first three words of the note if no title is specified upon created of the note.
 
 **As a user I want to be able to share my notes, so that others can view them.**
 
 Acceptance Criteria:
-- Share button next to save button
-- Functionality implemented to email note to others
+- share button next to save button
+- functionality implemented to email note to others
+
+**As a user, I want to see my username somewhere on the page so I know I'm logged in.**
+
+Acceptance Criteria:
+- Use a template variable to display the username on the site.
+- must be clearly visable
 
 ## Planning
 
+## Design
+
+The design is simple as I believe a notes app should be, using only black and white, and with no intrusive content on the page. Most of the styling is done via bootstrap's built in classes: the navbar is built using .navbar-dark and buttons with .btn-dark. There is no styling on the text, aside from the user's name, which is in white. The Django forms used are left in their default state. 
+
+I designed a logo for the site which I placed in the navbar and as a favicon. Go to [Features](#logo) for more on the logo.
+
+I used fontawesome for the plus sign on the homepage.
+
 ### Wireframes
 
-I created wireframes on Balsamiq in order to visualise the layout of the site. While the finished product differs from the wireframes quite significantly, they still served me well as a 
-rough guide. Some features shown in the wireframes have not been implemented due to a lack of time. The design is simple as I believe a notes app should be, using only black and white, and 
-with no intrusive content on the page. [View all wireframes in this document.](docs/NeatNotesWireframes.bmpr)
+I created wireframes on Balsamiq in order to visualise the layout of the site. [View all wireframes in this document.](docs/NeatNotesWireframes.bmpr)
 
-![wirefram screenshot](static/images/wireframe.png)
+![wireframe screenshot desktop](static/images/wireframedesktop.png)
+
+![wireframe screenshot tablet](static/images/wireframetablet.png)
+
+![wireframe screenshot ](static/images/wireframephone.png)
 
 ### Workflow
 
@@ -296,9 +312,21 @@ Once a note is marked as important, the layout of the homepage is changed; impor
 
 **Testing: Feature and userstory pass**
 
+
+### Username in Navbar
+
+Users like to see their username somewhere on the page so they know they are logged in, but also because their experience of the site feels more personalised.
+
+![screenshot of username](static/images/username.png)
+
+
+**Related User Story: As a user, I want to see my username somewhere on the page so I know I'm logged in.**
+
+**Testing: Feature and userstory pass**
+
 ### No Title Field Required
 
-Sometimes users don't want to think of a title for their note - maybe they just need to quickly note something down, and it doesn't need a title. I have implemented functionality that takes the first three words from the content of the note and sends it to the title field, allowing the user to leave the title blank, but still ensuring there is some title for their later reference.
+Sometimes users don't want to think of a title for their note - maybe they just need to quickly note something down and it doesn't need a title. I have implemented functionality that takes the first three words from the content of the note and sends it to the title field, allowing the user to leave the title blank, but still ensuring there is some title for their later reference.
 
 ![screenshot of blank title field](static/images/notitle.png)
 
@@ -313,8 +341,8 @@ Sometimes users don't want to think of a title for their note - maybe they just 
 
 As a site owner I wanted a logo for my brand that is simple, distinctive and quickly recognisable. I designed a white logo for the navbar, then inverted the colours to make a black one for the favicon. I designed it on microsoft paint.
 
-![screenshot of logowhite](static/images/NeatNotesLogo.jpg)
-![screenshot of logoblack](static/images/NeatNotesLogo.jpg)
+![screenshot of logowhite](static/images/neatnoteslogo.jpg)
+![screenshot of logoblack](static/images/neatnoteslogoblack.jpg)
 
 **Related User Story: As a site owner, I want a nice logo and distinctive colours to advertise my brand.**
 <br>
@@ -500,3 +528,4 @@ Then back to Heroku:
     - [What are Django class based views & should you use them? by Dennis Ivy](https://www.youtube.com/watch?v=RE0HlKch_3U&ab_channel=DennisIvy)
     - [Django Tutorial by Net Ninja](https://www.youtube.com/watch?v=3EzKBFc9_MQ&ab_channel=NetNinja) 
 - [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+-[fontawesome](https://fontawesome.com/) was used for the plus sign.
