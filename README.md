@@ -44,7 +44,7 @@ Acceptance Criteria:
 Acceptance Criteria:
 - front end form to input login details
 - login details checked backend
-- messages to tell user if the email/password is incorrect
+- messages to tell user if the username/password is incorrect
 - submit button
 
 **As a user, I want to be able to logout, so I know my notes are secure when I am not using the app.**
@@ -81,7 +81,7 @@ Acceptance Criteria:
 - important notes added to new set in the backend
 - button to undo important label and send back to normal notes
 
-**As a site owner, I want a nice logo and distinctive colours to advertise my brand.**
+**As a site owner, I want a nice logo and colours to advertise my brand.**
 
 Acceptance Criteria:
 - well designed logo
@@ -108,7 +108,7 @@ Acceptance Criteria:
 
 ### Design
 
-The design is simple as I believe a notes app should be, using only black and white, and with no intrusive content on the page. Most of the styling is done via bootstrap's built in classes: the navbar is built using .navbar-dark and buttons with .btn-dark. The front-end forms use bootstrap's .card class. There is no styling on the text, aside from the user's name which is in white.
+The design is simple, as I believe a notes app should be, using only black and white, and with no intrusive content on the page. Most of the styling is done via bootstrap's built in classes: the navbar is built using .navbar-dark and buttons with .btn-dark. The view, create and edit forms use bootstrap's .card class. There is no styling on the text, aside from the user's name which is in white.
 
 I designed a logo for the site which I placed in the navbar and as a favicon. Go to [Features](#logo) for more on the logo.
 
@@ -219,7 +219,7 @@ Users are given confirmation of logging out and a thank you message. There is no
 **Related User Story: As a user, I want to be able to logout, so I know my notes are secure when I am not using the app.**
 <br>
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
 
 ### Navbar
@@ -235,7 +235,7 @@ Users not logged-in see this navbar where they can login or sign-up.
 **Related User Story: As a user I want to be able to navigate the site easily, so that I have a better user experience.**
 <br>
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
 
 ### Create Note
@@ -255,7 +255,7 @@ Users are notified upon successful creation of notes.
 **Related User Story: As a user, I want to create a note to help keep my life organised.**
 <br>
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
 ### Delete Note
 
@@ -270,7 +270,7 @@ Users can delete notes they no longer need or want.
 **Related User Story: As a user I want to be able to delete a note so that I can get rid of old notes I don't need anymore.**
 <br>
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
 ### Edit
 
@@ -286,7 +286,7 @@ They are notified upon successful update of their note.
 **Related User Story: As a user I want to be able to update my notes, so that I can make changes to them.**
 <br>
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
 ### View
 
@@ -301,7 +301,7 @@ Users can view their notes in one place...
 **Related User Story: As a user I want to be able to view my saved notes, so that I can come back to them in the future.**
 <br>
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
 ### Mark as Important
 
@@ -318,7 +318,7 @@ Once a note is marked as important, the layout of the homepage is changed; impor
 **Related User Story: As a user I want to be able to label a note as important, so that I can see my more important notes in one place.**
 <br>
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
 
 ### Username in Navbar
@@ -330,7 +330,7 @@ Users like to see their username somewhere on the page so they know they are log
 
 **Related User Story: As a user, I want to see my username somewhere on the page so I know I'm logged in.**
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
 ### No Title Field Required
 
@@ -343,7 +343,7 @@ Sometimes users don't want to think of a title for their note - maybe they just 
 **Related User Story: As a user I want to be able to make a quick note without having to worry about the title, so that I can make a note faster.**
 <br>
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
 ### Logo
 
@@ -352,11 +352,11 @@ As a site owner I wanted a logo for my brand that is simple, distinctive and qui
 ![screenshot of logowhite](static/images/neatnoteslogo.jpg)
 ![screenshot of logoblack](static/images/neatnoteslogoblack.png)
 
-**Related User Story: As a site owner, I want a nice logo and distinctive colours to advertise my brand.**
+**Related User Story: As a site owner, I want a nice logo and colours to advertise my brand.**
 <br>
 
 **[Testing](#feature-and-user-story-testing):**
-Testing this feature and userstory is more difficult; I am happy with the logo, but whether the logo is nice is subjective. While I am also happy with simple black and white colour scheme, it would be a stretch to consider it distinctive. I will let you be the judge of this.
+Testing this feature and userstory is more difficult; I am happy with the logo, but whether the logo is nice is subjective. I am also happy with the simple black and white colour scheme, so I will consider this user story and feature as passed.
 
 ## Testing
 
@@ -413,12 +413,12 @@ I had a problem with displaying the users name in the navbar. Initially, I thoug
 ![picture of bug before](static/images/usersnameafter.png)
 
 ### Problems with Deployment
-I had added an unnecessary directory which held all my apps inside it. This initially only caused a few minor complications with link pathing, but I worked around it, thinking it was fine, but when I came to deploy, heroku threw the errors, 'build failed' and 'push rejected'. After some googling, I realised the unnecessary folder meant heroku was unable to identify my project as a django application. I was concerned this would become a tedious task of moving all my files into new folders one by one before deleting the problematic folder, but chatgpt gave me the command 'mv folder_name/* .' which moved everything out the parent directory. I then deleted the folder, and it worked!
+I had added an unnecessary directory which held all my apps inside it. This initially only caused a few minor complications with link pathing, but I worked around it, thinking it was fine, but when I came to deploy, heroku threw the errors, 'build failed' and 'push rejected'. After some googling, I realised the unnecessary folder meant heroku was unable to identify my project as a django application. I was concerned this would become a tedious task of moving all my files into new folders one by one before deleting the problematic folder, but chatgpt gave me the command, 'mv folder_name/* .' which moved everything out the parent directory. I then deleted the folder, and it worked!
 
 ![picture of command line code](static/images/folderbugcode.png)
 
 ### 'Create' Success Messages not Showing
-All success messages for sign-up, login, create, delete and edit were not working initially, however I quickly realised I had not imported 'SuccessMessageMixin' to my view, when I did, I believed I had solved the issue, and moved on. Upon testing, however, I noticed the create notification was not showing up. Inspecting the create view, I found that the function that identifies the user and saves the note to their database table, was stopping the success message. I added one line of code to fix this: messages.success(self.request, self.success_message).
+All success messages for sign-up, login, create, delete and edit were not working initially, however I quickly realised I had not imported 'SuccessMessageMixin' to my view, when I did, I believed I had solved the issue and moved on. Upon testing, however, I noticed the create notification was not showing up. Inspecting the create view, I found that the function that identifies the user and saves the note to their database table, was stopping the success message. I added one line of code to fix this: messages.success(self.request, self.success_message).
 
 ![picture of code for success message bug](static/images/bugsuccessbefore.png)
 
@@ -437,7 +437,7 @@ I initially attempted to use ajax javascript to implement functionality to mark 
 ![picture of lighthouse diognostics desktop](static/images/lighthousedesktopdiagnostics.png)
 
 ### Feature and User Story Testing
-This is documented in the features section where each feature is shown working, along with the user story it satisfies. [Go back to Features](#features) or click on a user story to view the specific feature relating to it. You can return here easily by clicking the on 'Testing' under each feature. User stories not addressed by the features section are shown below the user stories.
+This is documented in the features section where each feature is shown working, along with the user story it satisfies. [Go back to Features](#features) or click on a user story to view the specific feature relating to it. You can return here easily by clicking on 'Testing' under each feature. User stories not addressed by the features section are shown below the user stories.
 
 **[As a user I want to create a note to help keep my life organised.](#create-note)**
 
@@ -476,6 +476,7 @@ I believe this user story passes testing as the site is very clear and simple.
 #### User Story not Satisfied:
 
 **As a user I want to be able to share my notes, so that others can view them.**
+
 The functionality for this was not implemented due to complexity and lack of time. I had decided not to do this during planning and it was marked as 'Won't do' on Github.
 
 ## Code Validation
@@ -549,7 +550,7 @@ A search bar would be useful for users with a lot of notes.
 
 ### Folders
 
-Allow the user to create folders, which would be shown on the homepage, that they could put notes in for better organisation.
+Allow the user to create folders which would be shown on the homepage that they could put notes in for better organisation.
 
 ## Technologies
 
