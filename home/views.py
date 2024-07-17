@@ -37,7 +37,6 @@ class LoginInterfaceView(SuccessMessageMixin, LoginView):
     page to the home page and display success message.
     """
     template_name = 'home/login.html'
-    success_message = "Welcome! You are logged in."
 
 
 class LogoutInterfaceView(LogoutView):

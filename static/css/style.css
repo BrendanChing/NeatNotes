@@ -1,4 +1,6 @@
 .users-name {
-    color: white;
+    color: black;
     font-size: larger;
+    font-weight: bolder;
+    margin-left: 1%;
 }

@@ -108,7 +108,7 @@ Acceptance Criteria:
 
 ### Design
 
-The design is simple, as I believe a notes app should be, using only black and white, and with no intrusive content on the page. Most of the styling is done via bootstrap's built in classes: the navbar is built using .navbar-dark and buttons with .btn-dark. The view, create and edit forms use bootstrap's .card class. There is no styling on the text, aside from the user's name which is in white.
+The design is simple, as I believe a notes app should be, using only black and white, and with no intrusive content on the page. Most of the styling is done via bootstrap's built in classes: the navbar is built using .navbar-dark and buttons with .btn-dark. The view, create and edit forms use bootstrap's .card class. There is no styling on the text, aside from the login message which is bold and larger.
 
 I designed a logo for the site which I placed in the navbar and as a favicon. Go to [Features](#logo) for more on the logo.
 
@@ -197,14 +197,17 @@ Registered users can login using the form, allowing them access to the site.
 
 ![screenshot of login form](static/images/login.png)
 
-Users are notified when they login:
+Users are notified when they login. The message remains while they are logged in:
 
 ![screenshot of notification](static/images/loginmessage.png)
 
 **Related User Story: As a user I want to be able to login so that I can privately view, create, update and delete my personal notes.**
 <br>
 
-**[Testing](#feature-and-user-story-testing): Feature and userstory pass**
+**Related User Story: As a user, I want to see my username somewhere on the page so I know I'm logged in.**
+<br>
+
+**[Testing](#feature-and-user-story-testing): Feature and user stories pass**
 
 ### Logout 
 
@@ -320,18 +323,6 @@ Once a note is marked as important, the layout of the homepage is changed; impor
 
 **[Testing](#feature-and-user-story-testing): Feature and user story pass**
 
-
-### Username in Navbar
-
-Users like to see their username somewhere on the page so they know they are logged in, but also because their experience of the site feels more personalised.
-
-![screenshot of username](static/images/username.png)
-
-
-**Related User Story: As a user, I want to see my username somewhere on the page so I know I'm logged in.**
-
-**[Testing](#feature-and-user-story-testing): Feature and user story pass**
-
 ### No Title Field Required
 
 Sometimes users don't want to think of a title for their note - maybe they just need to quickly note something down and it doesn't need a title. I have implemented functionality that takes the first three words from the content of the note and sends it to the title field, allowing the user to leave the title blank, but still ensuring there is some title for their later reference.
@@ -405,20 +396,13 @@ On the notes list page, my intention was to have notes marked as important on th
 
 ![picture of bug before](static/images/bugifstatementsiteafter.png)
 
-### Users Name not showing in the Navbar
-I had a problem with displaying the users name in the navbar. Initially, I thought it hadn't rendered at all, but upon inspection of the element, I found that it was rending as black on black, ignoring my css file that specifies white text. I had not run 'collect static', when I did, it worked, showing the username in white over the navbar.
-
-![picture of bug before](static/images/usersnamebefore.png)
-
-![picture of bug before](static/images/usersnameafter.png)
-
 ### Problems with Deployment
 I had added an unnecessary directory which held all my apps inside it. This initially only caused a few minor complications with link pathing, but I worked around it, thinking it was fine, but when I came to deploy, heroku threw the errors, 'build failed' and 'push rejected'. After some googling, I realised the unnecessary folder meant heroku was unable to identify my project as a django application. I was concerned this would become a tedious task of moving all my files into new folders one by one before deleting the problematic folder, but chatgpt gave me the command, 'mv folder_name/* .' which moved everything out the parent directory. I then deleted the folder, and it worked!
 
 ![picture of command line code](static/images/folderbugcode.png)
 
 ### 'Create' Success Messages not Showing
-All success messages for sign-up, login, create, delete and edit were not working initially, however I quickly realised I had not imported 'SuccessMessageMixin' to my view, when I did, I believed I had solved the issue and moved on. Upon testing, however, I noticed the create notification was not showing up. Inspecting the create view, I found that the function that identifies the user and saves the note to their database table, was stopping the success message. I added one line of code to fix this: messages.success(self.request, self.success_message).
+All success messages for sign-up, login, create, delete and edit were not working initially, however I quickly realised I had not imported 'SuccessMessageMixin' to my view, when I did, I believed I had solved the issue and moved on. Upon testing, however, I noticed the create notification was not showing up. Inspecting the create view, I found that the function that identifies the user and saves the note to their database table was stopping the success message. I added one line of code to fix this: messages.success(self.request, self.success_message).
 
 ![picture of code for success message bug](static/images/bugsuccessbefore.png)
 
@@ -465,7 +449,7 @@ This is documented in the features section where each feature is shown working, 
 
 **As a user I want to be able to share my notes, so that others can view them.**
 
-**[As a user, I want to see my username somewhere on the page so I know I'm logged in.](#username-in-navbar)**
+**[As a user, I want to see my username somewhere on the page so I know I'm logged in.](#login)**
 
 #### Unaddressed User Story
 
